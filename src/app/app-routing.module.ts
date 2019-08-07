@@ -1,0 +1,40 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+// Components
+import { PagesComponent } from "./pages/pages.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { NotfoundComponent } from "./pages/notfound/notfound.component";
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'pages',
+    pathMatch: 'full'
+  },
+  {
+    path: 'pages',
+    component: PagesComponent,
+    children: [
+      {
+        path: 'index',
+        component: HomeComponent
+      }
+    ]
+  },
+  {
+    path: 'error_404',
+    component: NotfoundComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'error_404',
+    pathMatch: 'full'
+  }
+];
+
+@NgModule({
+  imports: [ RouterModule.forRoot(routes, {useHash: true}) ],
+  exports: [ RouterModule ]
+})
+export class AppRoutingModule { }
