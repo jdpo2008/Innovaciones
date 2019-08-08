@@ -1,2 +1,313 @@
-/* You can add global styles to this file, and also import other style files */
-@import url(./assets/css/style.css);
+/* You can add global styles to this file, and also import other style files
+@import url(./assets/css/style.css);  */
+
+html {
+    overflow-x: hidden;
+  }
+  
+  body {
+    line-height: 1.7;
+    color: gray;
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+  
+  ::-moz-selection {
+    background: #000;
+    color: #fff;
+  }
+  
+  ::selection {
+    background: #000;
+    color: #fff;
+  }
+  
+  a {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5 {
+    font-family: "Oswald", sans-serif !important;
+  }
+  
+  .border-2 {
+    border-width: 2px;
+  }
+  
+  .text-black {
+    color: #000 !important;
+  }
+  
+  .bg-black {
+    background: #000 !important;
+  }
+  
+  .color-black-opacity-5 {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .color-white-opacity-5 {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .line-height-1 {
+    line-height: 1 !important;
+  }
+  
+  .bg-black {
+    background: #000;
+  }
+
+  nav {
+    font-family: "Oswald", sans-serif !important;
+    margin-bottom: 0px;
+    z-index: 1999;
+    width: 100%;
+    background-color: #4389a2 !important;
+  }
+
+  .site-section {
+    padding: 2.5em 0;
+  }
+
+  .section-title {
+    font-family: "Oswald", sans-serif !important;
+    color: #fff;
+    font-weight: 300;
+  }
+  
+  .section-title strong {
+    font-weight: 700;
+  }
+
+  .section-subtitle {
+    font-family: "Oswald", sans-serif !important;
+    font-weight: 300;
+    color: #4389a2;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+  }
+
+  .services-1-wrap .service-1 {
+    padding: 20px 30px;
+    border: 1px solid #efefef;
+    border-right: none;
+    position: relative;
+  }
+  
+  @media (max-width: 1199.98px) {
+    .services-1-wrap .service-1 {
+        border: 1px solid #efefef;
+        margin-bottom: 30px;
+    }
+  }
+  
+  .services-1-wrap .service-1 .number {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: 400;
+    font-family: "Oswald", sans-serif;
+    color: #dcdcdc;
+  }
+  
+  .services-1-wrap .service-1 .service-1-icon {
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  .services-1-wrap .service-1 .service-1-icon:before {
+    position: absolute;
+    content: "";
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: -1;
+    left: -20px;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-right: 40px solid #4389a2;
+  }
+  
+  .services-1-wrap .service-1 .service-1-icon > span {
+    color: #000;
+    font-size: 4rem;
+  }
+  
+  .services-1-wrap .service-1 .service-1-content .service-heading {
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: 400;
+  }
+  
+  .services-1-wrap .service-1 .service-1-content p {
+    font-size: 15px;
+  }
+  
+  .services-1-wrap [class^="col-"]:last-child .service-1 {
+    border-right: 1px solid #efefef;
+  }
+
+  .footer {
+    padding: 2rem 0;
+    background: #4389a2;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+  @media (max-width: 780px) {
+    .footer {
+      padding: 6rem 0;
+    }
+  }
+
+  .ftco-footer .ftco-footer-widget {
+    width: 100%;
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin-top: -5px;
+  }
+  
+  .footer .ftco-footer-widget .ftco-footer-social {
+    margin-top: -10px !important;
+  }
+  
+  .ftco-footer-social li {
+    list-style: none;
+    margin: 0 10px 0 0;
+    display: inline-block; 
+  }
+  
+  .ftco-footer-social li a {
+      height: 40px;
+      width: 40px;
+      display: block;
+      float: left;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      position: relative; 
+      -webkit-transition: .5s ease-in-out;
+      -moz-transition: .5s ease-in-out;
+      -ms-transition: .5s ease-in-out;
+      -o-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+      color: white;
+    }
+  
+    .ftco-footer-social li .twitter:hover{
+      background-color: #38A1F3;
+    }
+  
+    .ftco-footer-social li .facebook:hover{
+      background-color: #4267b2;
+    }
+  
+    .ftco-footer-social li .instagram:hover{
+      background-color: rgb(94, 5, 5);
+    }
+  
+  .ftco-footer-social li a span {
+        position: absolute;
+        font-size: 20px;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); 
+  }
+  .ftco-footer-social li a:hover {
+    color: #fff; 
+  }
+
+  .person {
+    position: relative;
+  }
+  
+  .person figure {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  
+  .person img {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+  }
+  
+  .person .person-contents {
+    text-align: center;
+  }
+  
+  .person .person-contents h3 {
+    color: #000;
+  }
+  
+  .person .person-contents .position {
+    color: #4389a2;
+  }
+  
+  .person:hover img {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  
+  .person .social {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 2;
+   
+  }
+  
+  .person .social a {
+    display: block;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    position: relative;
+    color: #4389a2 !important;
+    border-radius: 50% !important;
+  }
+  
+  .person .social a > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .person .social a:hover {
+    background: #000;
+    color: #fff !important;
+  }

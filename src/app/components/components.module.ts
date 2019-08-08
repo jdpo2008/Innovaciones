@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutModule } from "./layout/layout.module";
+import { LayoutModule } from './layout/layout.module';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [CarouselComponent],
   imports: [
       CommonModule,
       LayoutModule
   ],
   exports: [
-      LayoutModule
+      LayoutModule, CarouselComponent
   ]
 })
 
