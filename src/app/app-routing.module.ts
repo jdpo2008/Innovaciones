@@ -6,6 +6,8 @@ import { PagesComponent } from './pages/pages.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ServiceWebComponent } from './pages/services/service-web/services-web.component';
+import { ServiceHostingComponent } from './pages/services/service-hosting/service-hosting.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,14 @@ const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent
+      },
+      {
+        path: 'services/web',
+        component: ServiceWebComponent
+      },
+      {
+        path: 'services/hosting',
+        component: ServiceHostingComponent
       }
     ]
   },

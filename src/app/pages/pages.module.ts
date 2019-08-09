@@ -11,9 +11,17 @@ import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AboutComponent } from './about/about.component';
+import { ServiceWebComponent } from './services/service-web/services-web.component';
+import { ServiceHostingComponent } from './services/service-hosting/service-hosting.component';
 
 @NgModule({
-  declarations: [ HomeComponent, NotfoundComponent, PagesComponent, AboutComponent ],
+  declarations: [
+    HomeComponent,
+    NotfoundComponent,
+    PagesComponent,
+    AboutComponent,
+    ServiceWebComponent,
+    ServiceHostingComponent ],
   imports: [
     CommonModule,
     LayoutModule,
@@ -21,6 +29,15 @@ import { AboutComponent } from './about/about.component';
     ComponentsModule,
     NgbModule
   ],
-  exports: [ ComponentsModule, NgbModule, HomeComponent, NotfoundComponent, PagesComponent, AboutComponent ]
+  exports: [
+    ComponentsModule,
+    NgbModule,
+    HomeComponent,
+    NotfoundComponent,
+    PagesComponent,
+    AboutComponent,
+    ServiceWebComponent,
+    ServiceHostingComponent
+  ]
 })
 export class PagesModule { }
