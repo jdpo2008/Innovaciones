@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url(./assets/css/bootstrap.css);  
 @import url(./assets/fonts/font-awesome/css/all.css); 
 @import url(./assets/fonts/flaticon-2/font/flaticon.css);  
@@ -365,4 +366,90 @@ html {
 .btn-price {
 	margin: 5px 0 15px !important;
 	transition: all 0.4s !important;
+}
+#contact {
+	width: 100%;
+	min-height: 100%;
+}
+#contact  h2{
+	color: #4389a2;
+}
+.ul-address a {
+	font-weight: normal;
+}
+.ul-address a:hover {
+	color: #4389a2;
+}
+.ul-address li {
+	padding-right: 20px; 
+	margin-bottom: 8px; 
+	list-style: none;
+	color: #4389a2;
+}
+.ul-address i {
+	margin-left: 15px;
+	position: absolute; 
+	left: 0;
+	color: #4389a2; 
+	font-size: 25px;
+	line-height: 30px;
+}
+.contact-row {
+	margin: 100px 0 100px;
+}
+#contact-form {
+	margin: 0 auto;
+}
+#contact-form input {
+	position: relative;
+	padding: 5px 25px;
+	width: 100%;
+}
+#contact-form textarea {
+	position: relative;
+	padding: 10px 25px;
+	width: 100%;
+	height: 120px !important;
+}
+#contact-form .form-control {
+	border-radius: 0;
+	border: solid 1px #dadada;
+	background-color: #fff;
+	color: #333;
+	font-size: 1.2em;
+	height: 55px;
+}
+#contact-form .btn {
+	height: 55px;
+	width: 100%;
+	background-color: #4389a2;
+	color: #ffffff;
+	font-size: 17px !important;
+	line-height: 18px;
+	padding: 0 33px;
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	-webkit-transition: all .8s ease;
+	transition: all .8s ease;
+}
+#contact-form .btn:hover {
+	background-color: rgb(138, 189, 247);
+	-webkit-transition: all .8s ease;
+	transition: all .8s ease;
+}
+.ng-valid[required], .ng-valid.required {border: 1px solid #42A948;}
+.error {color:#ff0000;}
+.success { color:green; }
+.contact-message { text-align: center; }
+.error-box {
+  position: relative;
+  padding-bottom: 60px; }
+.error-body {
+  padding-top: 10%; 
+}
+.error-body h1 {
+  font-size: 100px;
+  font-weight: 600;
+  line-height: 100px; 
 }

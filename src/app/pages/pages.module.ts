@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -13,6 +15,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AboutComponent } from './about/about.component';
 import { ServiceWebComponent } from './services/service-web/services-web.component';
 import { ServiceHostingComponent } from './services/service-hosting/service-hosting.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +24,16 @@ import { ServiceHostingComponent } from './services/service-hosting/service-host
     PagesComponent,
     AboutComponent,
     ServiceWebComponent,
-    ServiceHostingComponent ],
+    ServiceHostingComponent,
+    ContactComponent 
+  ],
   imports: [
     CommonModule,
     LayoutModule,
     RouterModule,
     ComponentsModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   exports: [
     ComponentsModule,
@@ -37,7 +43,8 @@ import { ServiceHostingComponent } from './services/service-hosting/service-host
     PagesComponent,
     AboutComponent,
     ServiceWebComponent,
-    ServiceHostingComponent
+    ServiceHostingComponent,
+    ContactComponent
   ]
 })
 export class PagesModule { }
