@@ -25,10 +25,10 @@
       <H3 style="font-size: x-large; color: #4389a2"><span class="highlight">COMUNÍQUESE</span></H3>
       <h2 style="font-size: x-large; color: #4389a2">(+51) 936 406 409</h2> -->
     </div>
-
-    <!-- /.contact form -->
+    
     <div class="col-sm-6 contact-right">
-      <form #contactForm="ngForm" id="contact-form" (ngSubmit)="onSubmit(contactForm)">
+      <app-contact-form></app-contact-form>
+      <!--<form #contactForm="ngForm" id="contact-form" (ngSubmit)="onSubmit(contactForm)">
         <div class="form-group">
           <input type="text" [(ngModel)]="name" name="name" id="Name" class="form-control" placeholder="Nombre"
             required  autocomplete="off"/>
@@ -56,7 +56,7 @@
         <div class="form-group">
           <button class="btn btn-success">Enviar</button>
         </div>
-      </form>
+      </form> -->
     </div>
 
   </div>

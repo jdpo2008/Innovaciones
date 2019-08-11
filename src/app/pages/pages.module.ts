@@ -25,7 +25,7 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     ServiceWebComponent,
     ServiceHostingComponent,
-    ContactComponent 
+    ContactComponent
   ],
   imports: [
     CommonModule,

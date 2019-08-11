@@ -1,8 +1,10 @@
 export interface MensajeContacto {
     id?: number;
-    name: string;
-    apellido: string;
+    firstName: string;
+    lastName: string;
     email: string;
     asunto: string;
-    mensaje: string;
+    address: string;
+    celular?: number;
+    telefono?: number;
 }
