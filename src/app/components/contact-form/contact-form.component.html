@@ -1,8 +1,8 @@
 <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
   <mat-card class="shipping-card">
     <!-- <mat-card-header>
-      <h4 class="highlight" style="color: gray !important">Información para Contactarlo</h4>
-    </mat-card-header> -->
+        <h4 class="highlight" style="color: gray !important">Información para Contactarlo</h4>
+      </mat-card-header> -->
     <mat-card-content>
       <div class="row">
         <div class="col">
@@ -79,7 +79,8 @@
             <input matInput placeholder="Teléfono" formControlName="telefono">
           </mat-form-field>
           <div *ngFor="let validation of validation_messages.telefono">
-            <mat-error *ngIf="summited && addressForm.get('telefono').hasError(validation.type) && (addressForm.get('telefono').dirty || addressForm.get('telefono').touched)">
+            <mat-error
+              *ngIf="summited && addressForm.get('telefono').hasError(validation.type) && (addressForm.get('telefono').dirty || addressForm.get('telefono').touched)">
               {{ validation.message }}
             </mat-error>
           </div>

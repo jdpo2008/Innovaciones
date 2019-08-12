@@ -6117,6 +6117,7 @@ a.close.disabled {
 
 .bs-popover-top, .bs-popover-auto[x-placement^="top"] {
   margin-bottom: 0.5rem;
+  color: #fff;
 }
 
 .bs-popover-top > .arrow, .bs-popover-auto[x-placement^="top"] > .arrow {
@@ -6228,7 +6229,8 @@ a.close.disabled {
 
 .popover-body {
   padding: 0.5rem 0.75rem;
-  color: #212529;
+  color: #fff;
+  text-align: center;
 }
 
 .carousel {

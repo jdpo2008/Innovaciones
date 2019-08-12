@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { MensajeContacto } from '../../types/messages';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, Validators, FormGroup } from "@angular/forms";
+import { MensajeContacto } from "../../types/messages";
 @Component({
-  selector: 'app-contact-form',
-  templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.css']
+  selector: "app-contact-form",
+  templateUrl: "./contact-form.component.html",
+  styleUrls: ["./contact-form.component.css"]
 })
-export class ContactFormComponent {
+export class ContactFormComponent implements OnInit {
   addressForm: FormGroup;
   summited = false;
   validation_messages = {};
@@ -14,35 +14,61 @@ export class ContactFormComponent {
 
   constructor(private fb: FormBuilder) {
     this.validation_messages = {
-      'celular': [
-          { type: 'minlength', message: 'El numero es invalido debe tener 12 digitos' },
-          { type: 'maxlength', message: 'El numero es invalido debe tener 12 digitos' },
-          { type: 'pattern', message: 'El campo solo debe contener numeros' }
+      celular: [
+        {
+          type: "minlength",
+          message: "El numero es invalido debe tener 12 digitos"
+        },
+        {
+          type: "maxlength",
+          message: "El numero es invalido debe tener 12 digitos"
+        },
+        { type: "pattern", message: "El campo solo debe contener numeros" }
       ],
-      'telefono': [
-        { type: 'minlength', message: 'El numero es invalido debe tener 12 digitos' },
-        { type: 'maxlength', message: 'El numero es invalido debe tener 12 digitos' },
-        { type: 'pattern', message: 'El campo solo debe contener numeros' }
-    ]
+      telefono: [
+        {
+          type: "minlength",
+          message: "El numero es invalido debe tener 12 digitos"
+        },
+        {
+          type: "maxlength",
+          message: "El numero es invalido debe tener 12 digitos"
+        },
+        { type: "pattern", message: "El campo solo debe contener numeros" }
+      ]
     };
+
     this.addressForm = this.fb.group({
       firstName: [null, Validators.required],
       lastName: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
       asunto: [null, [Validators.required]],
       address: [null, Validators.required],
-      celular: [null, [ Validators.compose([
-        Validators.minLength(10),
-        Validators.maxLength(12),
-        Validators.pattern(/^[0-9]\d{6,10}$/)
-      ])]],
-      telefono: [null,  Validators.compose([
-        Validators.minLength(10),
-        Validators.maxLength(12),
-        Validators.pattern(/^[0-9]\d{6,10}$/)
-      ])],
+      celular: [
+        null,
+        [
+          Validators.compose([
+            Validators.minLength(10),
+            Validators.maxLength(12),
+            Validators.pattern(/^[0-9]\d{6,10}$/)
+          ])
+        ]
+      ],
+      telefono: [
+        null,
+        Validators.compose([
+          Validators.minLength(10),
+          Validators.maxLength(12),
+          Validators.pattern(/^[0-9]\d{6,10}$/)
+        ])
+      ]
     });
   }
+
+  ngOnInit(): void {
+   
+  }
+
   get f() {
     return this.addressForm.controls;
   }
@@ -55,6 +81,6 @@ export class ContactFormComponent {
       return;
     }
 
-    alert('Thanks!');
+    alert("Thanks!");
   }
 }

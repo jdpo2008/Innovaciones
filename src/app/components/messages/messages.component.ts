@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-services',
-  templateUrl: './services-web.component.html',
+  selector: 'app-messages',
+  templateUrl: './messages.component.html',
   styles: []
 })
-export class ServiceWebComponent implements OnInit {
+export class MessagesComponent implements OnInit {
 
   constructor() { }
 
@@ -16,6 +16,6 @@ export class ServiceWebComponent implements OnInit {
         .parents(".theme-config")
         .toggleClass("opened");
     });
-   }
+  }
 
 }

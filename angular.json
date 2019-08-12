@@ -28,6 +28,7 @@
               "node_modules/aos/dist/aos.css"
             ],
             "scripts": [
+              "node_modules/@fortawesome/fontawesome-free/js/all.js",
               "node_modules/aos/src/js/aos.js"
             ]
           },

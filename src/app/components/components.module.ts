@@ -9,9 +9,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
-  declarations: [CarouselComponent, ContactFormComponent],
+  declarations: [CarouselComponent, ContactFormComponent, MessagesComponent],
   imports: [
       CommonModule,
       LayoutModule,
@@ -23,7 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
       ReactiveFormsModule
   ],
   exports: [
-      LayoutModule, CarouselComponent, ContactFormComponent
+      LayoutModule, CarouselComponent, ContactFormComponent, MessagesComponent
   ]
 })
 

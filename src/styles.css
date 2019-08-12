@@ -397,3 +397,113 @@ html {
 .contact-row {
 	margin: 100px 0 100px;
 }
+.custom-class {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff !important;
+}
+
+.custom-class .arrow::after {
+  border-top-color: rgba(0, 0, 0, 0.8);
+}
+.fa-question-circle {
+  color: gray;
+}
+
+.theme-config {
+  position:absolute;
+  right: -525px;
+  top: 100px;
+  z-index: 1001;
+  width: auto;
+  -webkit-transition: right .3s ease-in-out;
+  -o-transition: right .3s ease-in-out;
+  transition: right .3s ease-in-out;
+}
+
+.theme-config .theme-config-toggle {
+  position: absolute;
+  left: -34px;
+  height: 38px;
+  width: 35px;
+  background-color: #23b7e5;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.theme-config .theme-config-toggle .theme-config-show {
+  font-size: 22px;
+  color: #fff;
+  line-height: 38px;
+}
+
+.theme-config .theme-config-toggle .theme-config-close {
+  display: none;
+  font-size: 18px;
+  line-height: 38px;
+  background-color: #23b7e5;
+  color: #fff;
+}
+
+.theme-config .theme-config-box {
+  padding: 10px 20px 20px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-config.opened {
+  right: 0;
+}
+
+.theme-config.opened .theme-config-toggle {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: none;
+}
+
+.theme-config.opened .theme-config-toggle .theme-config-show {
+  display: none;
+}
+
+.theme-config.opened .theme-config-toggle .theme-config-close {
+  display: block;
+}
+
+.theme-config.opened .theme-config-toggle .close-btn {
+  display: block;
+}
+
+.to-top {
+  position: fixed;
+  right: 3px;
+  bottom: 40px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFF;
+  border: 2px solid #23b7e5;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  z-index: 1001;
+  opacity: 1;
+  cursor: pointer;
+  display: none;
+}
+
+.to-top i {
+  font-size: 26px;
+  color: #23b7e5;
+}
+
+.to-top:hover {
+  background-color: #687991;
+}
+
+.to-top:hover i {
+  display: block;
+  color: #fff;
+}
