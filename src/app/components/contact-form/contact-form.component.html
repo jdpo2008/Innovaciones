@@ -53,7 +53,7 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Mensaje</mat-label>
-            <textarea rows="5" style="resize: none" matInput placeholder="Mensaje" formControlName="address"></textarea>
+            <textarea rows="3" style="resize: none" matInput placeholder="Mensaje" formControlName="address"></textarea>
             <mat-error *ngIf="summited && addressForm.controls['address'].hasError('required')">
               Mensaje es <strong>Requerido</strong>
             </mat-error>

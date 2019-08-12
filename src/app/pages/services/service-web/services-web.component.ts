@@ -11,11 +11,12 @@ export class ServiceWebComponent implements OnInit {
 
   ngOnInit() {
      // TOGGLE MESSAGES BOX
-     $(".theme-config-toggle").on("click", function() {
-      $(this)
-        .parents(".theme-config")
-        .toggleClass("opened");
-    });
+    //  $('.theme-config-toggle').on('click', function() {
+    //   $(this)
+    //     .parents('.theme-config')
+    //     .toggleClass('opened');
+    // });
    }
 
+ 
 }
