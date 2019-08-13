@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import * as $ from 'jquery';
 import * as AOS from 'aos';
@@ -10,7 +11,7 @@ import * as AOS from 'aos';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit() {
     AOS.init();
@@ -18,6 +19,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit(): void {
+  }
+
+  onAbout() {
+    this.router.navigate(['/pages/about']);
+  }
+
+  onProjects() {
+    this.router.navigate(['/pages/projects']);
   }
 
 }

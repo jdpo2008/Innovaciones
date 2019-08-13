@@ -42,11 +42,13 @@ html {
   h3,
   h4,
   h5,
+  h6,
   .h1,
   .h2,
   .h3,
   .h4,
-  .h5 {
+  .h5,
+  .h6 {
     font-family: "Oswald", sans-serif !important;
   }
   
@@ -175,10 +177,6 @@ html {
     font-weight: 500;
     color: #fff;
     height: auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-content: center;
   }
 
   @media (max-width: 780px) {
@@ -508,6 +506,30 @@ html {
   color: #fff;
 }
 
+.text-underline {
+  text-decoration: underline;
+}
+
+.d-flex-row{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+}
+
+.d-flex-row > li {
+  border-bottom: 1px solid rgba(255, 255, 255, .9);
+ 
+}
+
+.d-flex-row > li > a {
+  width: 100%;
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+}
+
 /************************************************************************************
 smaller than 990
 *************************************************************************************/
@@ -515,6 +537,13 @@ smaller than 990
   /* embedded videos */
   .theme-config {
     display: none;
+  }
+  .img-box {
+    text-align: center;
+  }
+  .img-box .img-service {
+    width: 300px;
+    height: 300px;
   }
 }
 

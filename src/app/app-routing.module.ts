@@ -9,6 +9,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ServiceWebComponent } from './pages/services/service-web/services-web.component';
 import { ServiceHostingComponent } from './pages/services/service-hosting/service-hosting.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ServiceExtraComponent } from './pages/services/service-extra/service-extra.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path: 'services/hosting',
         component: ServiceHostingComponent
+      },
+      {
+        path: 'services/extras',
+        component: ServiceExtraComponent
       },
       {
         path: 'contacto',

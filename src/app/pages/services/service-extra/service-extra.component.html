@@ -1,0 +1,113 @@
+<div class="container-fluid" style="margin: 5em 0">
+  <div class="row" data-aos="zoom-in">
+    <div class="col-lg-8" style="padding-top: 3em">
+      <h3>Dominio</h3>
+      <div class="box text-justify">
+        <p>Un dominio o nombre de dominio es el nombre que identifica un sitio web.
+          Cada dominio tiene que ser único en Internet. Por ejemplo, "www.masadelante.com"
+          es el nombre de dominio de la página web de Masadelante. Un solo servidor web puede
+          servir múltiples páginas web de múltiples dominios, pero un dominio sólo puede apuntar
+          a un servidor..</p>
+      </div>
+
+    </div>
+    <div class="col-lg-4">
+      <img class="img-fluid" src="../../../../assets/images/domains.png" width="400px" height="400px" alt="">
+    </div>
+  </div>
+  <div class="row mt-5" data-aos="zoom-in">
+    <div class="col-md-4">
+      <h4>Registrar Dominio</h4>
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+        </ng-container>
+        <!-- Dominio Column -->
+        <ng-container matColumnDef="dominio">
+          <mat-header-cell *matHeaderCellDef> Dominio </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.dominio}} </mat-cell>
+        </ng-container>
+        <!-- Precio Column -->
+        <ng-container matColumnDef="precio">
+          <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.precio}} </mat-cell>
+        </ng-container>
+        <!-- Symbol Moneda -->
+        <ng-container matColumnDef="moneda">
+          <mat-header-cell *matHeaderCellDef> Moneda </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.moneda}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <h3 class="col-md-3" style="padding-top: 15px">Buscar Dominio</h3>
+        <div class="col-md-9 form-inline">
+          <mat-form-field class="full-width" style="width: 90% !important" appearance="outline">
+            <mat-label>Buscar dominio</mat-label>
+            <input matInput placeholder="Dominio" name="dominio" [(ngModel)]="dominio" required>
+            <button mat-icon-button matSuffix (click)="buscarDominio(dominio)" style="padding-top: 15px !important">
+              <mat-icon>search2</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-error>
+          </mat-error>
+          <!-- <div *ngFor="let validation of validation_messages.telefono">
+                              </div> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h4> Tipos de Dominios</h4>
+          <ul>
+            <li>
+              <h5 style="margin-top: 1em">Dominios de Nivel Superior Genéricos</h5>
+              <p class="text-justify">
+                Este tipo de dominios son los de uso común y más utlizados
+                a nivel mundial, no se ajustan a un país determinado y sus
+                terminaciones definen el concepto para el cual se utilizan:
+              </p>
+              <ul>
+                <li>
+                  <span style="font-weight: 400">.com:</span> Sitio comercial
+                </li>
+                <li>
+                  <span style="font-weight: 400">.net:</span> Empresa de servicios de Internet
+                </li>
+                <li>
+                  <span style="font-weight: 400">.org:</span> Organización sin fines de lucro
+                </li>
+                <li>
+                  <span style="font-weight: 400">.info:</span> Sitio informativo
+                </li>
+                <li>
+                  <span style="font-weight: 400">.biz:</span> Sitio de negocios
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h5 style="margin-top: 1em">Dominios de Nivel Superior Geográfico</h5>
+              <p class="text-justify"> Son conocidos también como dominios
+                territoriales y son usados por países o territorios dependientes;
+                se componen de 2 caracteres.</p>
+              <ul>
+                <li>
+                  <span style="font-weight: 400">.ve:</span> Venezuela
+                </li>
+                <li>
+                  <span style="font-weight: 400">.co:</span> Colombia
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <app-pagos></app-pagos>
+</div>

@@ -15,6 +15,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AboutComponent } from './about/about.component';
 import { ServiceWebComponent } from './services/service-web/services-web.component';
 import { ServiceHostingComponent } from './services/service-hosting/service-hosting.component';
+import { ServiceExtraComponent } from './services/service-extra/service-extra.component';
 import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     ServiceWebComponent,
     ServiceHostingComponent,
+    ServiceExtraComponent,
     ContactComponent
   ],
   imports: [
@@ -44,6 +46,7 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     ServiceWebComponent,
     ServiceHostingComponent,
+    ServiceExtraComponent,
     ContactComponent
   ]
 })
