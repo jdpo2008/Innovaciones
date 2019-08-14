@@ -1,4 +1,5 @@
 <?php 
+
 function WOIS($WOIS='',$Dominio){
 	$stringDatoWois="";
 	$Mostrar=array();
@@ -38,31 +39,29 @@ return $Mostrar;
        		if($key==$ExtesionDominio){
             if (WOIS($value[0],$NombreDominio.$ExtesionDominio)[0]==true){
                   $DatoSWois= WOIS($value[0],$NombreDominio.$ExtesionDominio)[1];
-                    $Disponible = new stdClass();
-                    $Disponible->dominio = $NombreDominio.$ExtesionDominio;
-                    $Disponible->dispponible = true;
-                    $Disponible->propietario = null;
-                    $jsonDisponible = json_encode($Disponible);
-                    $NoDisponible = new stdClass();
-                    $NoDisponible->dominio = $NombreDominio.$ExtesionDominio;
-                    $NoDisponible->dispponible = false;
-                    $NoDisponible->propietario = WOIS($value[0],$NombreDominio.$ExtesionDominio)[1];
-                    $jsonNoDisponible = json_encode($NoDisponible);
+                  $Disponible = {
+                      'dominio': .$NombreDominio.$ExtesionDominio,
+                      'disponoble': true
+                  };
+                    $NoDisponible = {
+                        'dominio': .$NombreDominio.$ExtesionDominio,
+                        'disponoble': false
+                    };
                        //Quitamos algunos caracteres
                        //del servidor WHOIS Boliviano    
                       if($key==".bo"){
                         $DatoSWois=str_replace(array("\r\n", "\n", "\r"), '', $DatoSWois);
                          if($DatoSWois==$value[1]){
-                           echo $json_info = $jsonDisponible;
+                           echo $Disponible;
                         }else{
-                            echo $json_info = $jsonNoDisponible; 
+                            echo $NoDisponible; 
                         }
                       }else{
                         //Buscamos 
                         if (preg_match("/".$value[1]."/i",$DatoSWois)){
-                            echo $json_info = $jsonDisponible;
+                            echo $Disponible ;
                           }else{
-                            echo $json_info = $jsonNoDisponible; 
+                            echo $NoDisponible; 
                           }
                       }
                }else{

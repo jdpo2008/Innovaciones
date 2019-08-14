@@ -47,7 +47,7 @@
       <div class="row">
         <h3 class="col-md-3" style="padding-top: 15px">Buscar Dominio</h3>
         <div class="col-md-9 form-inline">
-          <form action="buscador.php" method="POST" style="width: 100%;">
+          <form action="buscador.php" method="POST" #f="ngForm" novalidate style="width: 100%;">
             <mat-form-field class="full-width" style="width: 90% !important" appearance="outline">
               <!-- <mat-label>Dominio</mat-label> -->
               <input matInput placeholder="Dominio" name="dominio" (keyup.enter)="buscarDominio(dominio, extension)" [(ngModel)]="dominio" required>
@@ -57,8 +57,8 @@
               <button type="submit" mat-icon-button matPrefix (click)="buscarDominio(dominio, extension)" style="padding-top: 15px !important">
                 <mat-icon>search2</mat-icon>
               </button>
+              <mat-error *ngIf="f.invalid && submited">{{error}}</mat-error>
             </mat-form-field>
-            <mat-error>{{error}}</mat-error>
           </form>
         </div>
       </div>

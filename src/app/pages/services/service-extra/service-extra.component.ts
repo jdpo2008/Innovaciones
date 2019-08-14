@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DominioService } from '../../../services/dominio.service';
+import { AlertService } from '../../../services/alert.service';
 
 export interface PeriodicElement {
   dominio: string;
@@ -32,36 +33,38 @@ export class ServiceExtraComponent implements OnInit {
   displayedColumns: string[] = ["position", "dominio", "precio", "moneda"];
   dataSource = ELEMENT_DATA;
   Incremento = 0;
-  error = '';
+  error = 'Debes Ingresar un dominio valido, ejemplo www.google.com';
   extension = '.com';
   incremento = 0;
-  constructor(private dominioService: DominioService) {}
+  submited = false;
+  constructor(private dominioService: DominioService, private alertaservice: AlertService) {}
 
   ngOnInit() {
     this.dominios = ELEMENT_DATA;
   }
 
   buscarDominio(texto, extension) {
-
-    const dominio = texto + extension;
-
+    this.submited = true;
     if (texto === '' || extension === '') {
+      this.alertaservice.setMensaje('warning', 'Atención.', 'Debes Ingresar un dominio formato www.google.com', 5000 );
       return;
     }
 
     $.ajax({
       url: 'buscador.php',
       type: 'POST',
-      dataType: 'text',
-      data: {Nomb: texto, "Ext": extension, "Incremento" : this.Incremento++},
+      dataType: 'json',
+      data: { Nomb: texto, "Ext": extension, "Incremento" : this.Incremento++ },
     }).done((data) => {
-      console.log(data);
-      // $("#loader").html("");
-      // $("#Mostrar").append(data);
-    }).fail(() => {
-      console.log("error");
+      if (data.disponible) {
+        this.alertaservice.setMensaje('success', 'Excelente!..', 'El Dominio ' + texto + extension + ' esta disponible', 5000 );
+      } else {
+        this.alertaservice.setMensaje('error', 'Ops!..', 'El Dominio ' + texto + extension + ' no esta disponible', 5000 );
+      }
+    }).fail((err) => {
+      console.log(err);
     }).always(() => {
-      console.log("complete");
+      console.log('solicitud completa');
     });
 
     // this.dominioService.buscarDominio(dominio).subscribe( (data) => {
