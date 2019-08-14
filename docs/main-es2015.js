@@ -162,7 +162,7 @@ module.exports = "<div class=\"site-wrap\">\n  <app-navbar></app-navbar>\n  <rou
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" style=\"margin: 5em 0\">\n  <div class=\"row\" data-aos=\"zoom-in\">\n    <div class=\"col-lg-8\" style=\"padding-top: 3em\">\n      <h3>Dominio</h3>\n      <div class=\"box text-justify\">\n        <p>Un dominio o nombre de dominio es el nombre que identifica un sitio web.\n          Cada dominio tiene que ser único en Internet. Por ejemplo, \"www.masadelante.com\"\n          es el nombre de dominio de la página web de Masadelante. Un solo servidor web puede\n          servir múltiples páginas web de múltiples dominios, pero un dominio sólo puede apuntar\n          a un servidor..</p>\n      </div>\n\n    </div>\n    <div class=\"col-lg-4\">\n      <img class=\"img-fluid\" src=\"../../../../assets/images/domains.png\" width=\"400px\" height=\"400px\" alt=\"\">\n    </div>\n  </div>\n  <div class=\"row mt-5\" data-aos=\"zoom-in\">\n    <div class=\"col-md-4\">\n      <h4>Registrar Dominio</h4>\n      <mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.position}} </mat-cell>\n        </ng-container>\n        <!-- Dominio Column -->\n        <ng-container matColumnDef=\"dominio\">\n          <mat-header-cell *matHeaderCellDef> Dominio </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.dominio}} </mat-cell>\n        </ng-container>\n        <!-- Precio Column -->\n        <ng-container matColumnDef=\"precio\">\n          <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.precio}} </mat-cell>\n        </ng-container>\n        <!-- Symbol Moneda -->\n        <ng-container matColumnDef=\"moneda\">\n          <mat-header-cell *matHeaderCellDef> Moneda </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.moneda}} </mat-cell>\n        </ng-container>\n        <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n        <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n      </mat-table>\n    </div>\n    <div class=\"col-md-8\">\n      <div class=\"row\">\n        <h3 class=\"col-md-3\" style=\"padding-top: 15px\">Buscar Dominio</h3>\n        <div class=\"col-md-9 form-inline\">\n          <form action=\"buscador.php\" method=\"POST\" style=\"width: 100%;\">\n            <mat-form-field class=\"full-width\" style=\"width: 90% !important\" appearance=\"outline\">\n              <!-- <mat-label>Dominio</mat-label> -->\n              <input matInput placeholder=\"Dominio\" name=\"dominio\" (keyup.enter)=\"buscarDominio(dominio, extension)\" [(ngModel)]=\"dominio\" required>\n              <mat-select name=\"extension\" style=\"width: 25%\" class=\"ampm\" [(ngModel)]=\"extension\">\n                  <mat-option *ngFor=\"let item of dominios\" [value]=\"item.dominio\" >{{item.dominio}}</mat-option>\n             </mat-select>\n              <button type=\"submit\" mat-icon-button matPrefix (click)=\"buscarDominio(dominio, extension)\" style=\"padding-top: 15px !important\">\n                <mat-icon>search2</mat-icon>\n              </button>\n            </mat-form-field>\n            <mat-error>{{error}}</mat-error>\n          </form>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <h4> Tipos de Dominios</h4>\n          <ul>\n            <li>\n              <h5 style=\"margin-top: 1em\">Dominios de Nivel Superior Genéricos</h5>\n              <p class=\"text-justify\">\n                Este tipo de dominios son los de uso común y más utlizados\n                a nivel mundial, no se ajustan a un país determinado y sus\n                terminaciones definen el concepto para el cual se utilizan:\n              </p>\n              <ul>\n                <li>\n                  <span style=\"font-weight: 400\">.com:</span> Sitio comercial\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.net:</span> Empresa de servicios de Internet\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.org:</span> Organización sin fines de lucro\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.info:</span> Sitio informativo\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.biz:</span> Sitio de negocios\n                </li>\n              </ul>\n            </li>\n            <li>\n              <h5 style=\"margin-top: 1em\">Dominios de Nivel Superior Geográfico</h5>\n              <p class=\"text-justify\"> Son conocidos también como dominios\n                territoriales y son usados por países o territorios dependientes;\n                se componen de 2 caracteres.</p>\n              <ul>\n                <li>\n                  <span style=\"font-weight: 400\">.ve:</span> Venezuela\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.co:</span> Colombia\n                </li>\n              </ul>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  <br />\n  <app-pagos></app-pagos>\n</div>"
+module.exports = "<div class=\"container-fluid\" style=\"margin: 5em 0\">\n  <div class=\"row\" data-aos=\"zoom-in\">\n    <div class=\"col-lg-8\" style=\"padding-top: 3em\">\n      <h3>Dominio</h3>\n      <div class=\"box text-justify\">\n        <p>Un dominio o nombre de dominio es el nombre que identifica un sitio web.\n          Cada dominio tiene que ser único en Internet. Por ejemplo, \"www.masadelante.com\"\n          es el nombre de dominio de la página web de Masadelante. Un solo servidor web puede\n          servir múltiples páginas web de múltiples dominios, pero un dominio sólo puede apuntar\n          a un servidor..</p>\n      </div>\n\n    </div>\n    <div class=\"col-lg-4\">\n      <img class=\"img-fluid\" src=\"../../../../assets/images/domains.png\" width=\"400px\" height=\"400px\" alt=\"\">\n    </div>\n  </div>\n  <div class=\"row mt-5\" data-aos=\"zoom-in\">\n    <div class=\"col-md-4\">\n      <h4>Registrar Dominio</h4>\n      <mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.position}} </mat-cell>\n        </ng-container>\n        <!-- Dominio Column -->\n        <ng-container matColumnDef=\"dominio\">\n          <mat-header-cell *matHeaderCellDef> Dominio </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.dominio}} </mat-cell>\n        </ng-container>\n        <!-- Precio Column -->\n        <ng-container matColumnDef=\"precio\">\n          <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.precio}} </mat-cell>\n        </ng-container>\n        <!-- Symbol Moneda -->\n        <ng-container matColumnDef=\"moneda\">\n          <mat-header-cell *matHeaderCellDef> Moneda </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.moneda}} </mat-cell>\n        </ng-container>\n        <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n        <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n      </mat-table>\n    </div>\n    <div class=\"col-md-8\">\n      <div class=\"row\">\n        <h3 class=\"col-md-3\" style=\"padding-top: 15px\">Buscar Dominio</h3>\n        <div class=\"col-md-9 form-inline\">\n          <form action=\"buscador.php\" method=\"POST\" #f=\"ngForm\" novalidate style=\"width: 100%;\">\n            <mat-form-field class=\"full-width\" style=\"width: 90% !important\" appearance=\"outline\">\n              <!-- <mat-label>Dominio</mat-label> -->\n              <input matInput placeholder=\"Dominio\" name=\"dominio\" (keyup.enter)=\"buscarDominio(dominio, extension)\" [(ngModel)]=\"dominio\" required>\n              <mat-select name=\"extension\" style=\"width: 25%\" class=\"ampm\" [(ngModel)]=\"extension\">\n                  <mat-option *ngFor=\"let item of dominios\" [value]=\"item.dominio\" >{{item.dominio}}</mat-option>\n             </mat-select>\n              <button type=\"submit\" mat-icon-button matPrefix (click)=\"buscarDominio(dominio, extension)\" style=\"padding-top: 15px !important\">\n                <mat-icon>search2</mat-icon>\n              </button>\n              <mat-error *ngIf=\"f.invalid && submited\">{{error}}</mat-error>\n            </mat-form-field>\n          </form>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <h4> Tipos de Dominios</h4>\n          <ul>\n            <li>\n              <h5 style=\"margin-top: 1em\">Dominios de Nivel Superior Genéricos</h5>\n              <p class=\"text-justify\">\n                Este tipo de dominios son los de uso común y más utlizados\n                a nivel mundial, no se ajustan a un país determinado y sus\n                terminaciones definen el concepto para el cual se utilizan:\n              </p>\n              <ul>\n                <li>\n                  <span style=\"font-weight: 400\">.com:</span> Sitio comercial\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.net:</span> Empresa de servicios de Internet\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.org:</span> Organización sin fines de lucro\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.info:</span> Sitio informativo\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.biz:</span> Sitio de negocios\n                </li>\n              </ul>\n            </li>\n            <li>\n              <h5 style=\"margin-top: 1em\">Dominios de Nivel Superior Geográfico</h5>\n              <p class=\"text-justify\"> Son conocidos también como dominios\n                territoriales y son usados por países o territorios dependientes;\n                se componen de 2 caracteres.</p>\n              <ul>\n                <li>\n                  <span style=\"font-weight: 400\">.ve:</span> Venezuela\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.co:</span> Colombia\n                </li>\n              </ul>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  <br />\n  <app-pagos></app-pagos>\n</div>"
 
 /***/ }),
 
@@ -347,38 +347,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _sweetalert2_ngx_sweetalert2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @sweetalert2/ngx-sweetalert2 */ "./node_modules/@sweetalert2/ngx-sweetalert2/fesm2015/sweetalert2-ngx-sweetalert2.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _pages_pages_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/pages.module */ "./src/app/pages/pages.module.ts");
 /* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm2015/layout.js");
 /* harmony import */ var _services_dominio_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./services/dominio.service */ "./src/app/services/dominio.service.ts");
+/* harmony import */ var _services_alert_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/alert.service */ "./src/app/services/alert.service.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 
 
 
 
 
 
+// Modulos Aplicacion
 
 
 
+// Servicios
+
+
+// Main Component
 
 let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"]
         ],
         imports: [
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
             _pages_pages_module__WEBPACK_IMPORTED_MODULE_7__["PagesModule"],
-            _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_8__["LayoutModule"]
+            _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_8__["LayoutModule"],
+            _sweetalert2_ngx_sweetalert2__WEBPACK_IMPORTED_MODULE_5__["SweetAlert2Module"].forRoot()
         ],
-        providers: [_services_dominio_service__WEBPACK_IMPORTED_MODULE_9__["DominioService"]],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
+        providers: [_services_dominio_service__WEBPACK_IMPORTED_MODULE_9__["DominioService"], _services_alert_service__WEBPACK_IMPORTED_MODULE_10__["AlertService"]],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"]]
     })
 ], AppModule);
 
@@ -1054,6 +1062,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_dominio_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/dominio.service */ "./src/app/services/dominio.service.ts");
+/* harmony import */ var _services_alert_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/alert.service */ "./src/app/services/alert.service.ts");
+
 
 
 
@@ -1071,37 +1081,43 @@ const ELEMENT_DATA = [
     { position: 11, dominio: ".info.ve", precio: 22000, moneda: "BsS." }
 ];
 let ServiceExtraComponent = class ServiceExtraComponent {
-    constructor(dominioService) {
+    constructor(dominioService, alertaservice) {
         this.dominioService = dominioService;
+        this.alertaservice = alertaservice;
         this.dominios = [];
         this.displayedColumns = ["position", "dominio", "precio", "moneda"];
         this.dataSource = ELEMENT_DATA;
         this.Incremento = 0;
-        this.error = '';
+        this.error = 'Debes Ingresar un dominio valido, ejemplo www.google.com';
         this.extension = '.com';
         this.incremento = 0;
+        this.submited = false;
     }
     ngOnInit() {
         this.dominios = ELEMENT_DATA;
     }
     buscarDominio(texto, extension) {
-        const dominio = texto + extension;
+        this.submited = true;
         if (texto === '' || extension === '') {
+            this.alertaservice.setMensaje('warning', 'Atención.', 'Debes Ingresar un dominio formato www.google.com', 5000);
             return;
         }
         $.ajax({
             url: 'buscador.php',
             type: 'POST',
-            dataType: 'text',
+            dataType: 'json',
             data: { Nomb: texto, "Ext": extension, "Incremento": this.Incremento++ },
         }).done((data) => {
-            console.log(data);
-            // $("#loader").html("");
-            // $("#Mostrar").append(data);
-        }).fail(() => {
-            console.log("error");
+            if (data.disponible) {
+                this.alertaservice.setMensaje('success', 'Excelente!..', 'El Dominio ' + texto + extension + ' esta disponible', 5000);
+            }
+            else {
+                this.alertaservice.setMensaje('error', 'Ops!..', 'El Dominio ' + texto + extension + ' no esta disponible', 5000);
+            }
+        }).fail((err) => {
+            console.log(err);
         }).always(() => {
-            console.log("complete");
+            console.log('solicitud completa');
         });
         // this.dominioService.buscarDominio(dominio).subscribe( (data) => {
         //   console.log(data);
@@ -1109,14 +1125,15 @@ let ServiceExtraComponent = class ServiceExtraComponent {
     }
 };
 ServiceExtraComponent.ctorParameters = () => [
-    { type: _services_dominio_service__WEBPACK_IMPORTED_MODULE_2__["DominioService"] }
+    { type: _services_dominio_service__WEBPACK_IMPORTED_MODULE_2__["DominioService"] },
+    { type: _services_alert_service__WEBPACK_IMPORTED_MODULE_3__["AlertService"] }
 ];
 ServiceExtraComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: "app-service-extra",
         template: __webpack_require__(/*! raw-loader!./service-extra.component.html */ "./node_modules/raw-loader/index.js!./src/app/pages/services/service-extra/service-extra.component.html")
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_dominio_service__WEBPACK_IMPORTED_MODULE_2__["DominioService"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_dominio_service__WEBPACK_IMPORTED_MODULE_2__["DominioService"], _services_alert_service__WEBPACK_IMPORTED_MODULE_3__["AlertService"]])
 ], ServiceExtraComponent);
 
 
@@ -1192,6 +1209,55 @@ ServiceWebComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
 ], ServiceWebComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/alert.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/services/alert.service.ts ***!
+  \*******************************************/
+/*! exports provided: AlertService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlertService", function() { return AlertService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+let AlertService = class AlertService {
+    constructor() { }
+    setMensaje(tipo, titulo, mensaje, duracion) {
+        const Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: duracion,
+            background: '#32323a',
+            customClass: {
+                title: 'title-class',
+                content: 'content-class'
+            }
+        });
+        Toast.fire({
+            type: tipo,
+            title: titulo,
+            text: mensaje
+        });
+    }
+};
+AlertService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], AlertService);
 
 
 
