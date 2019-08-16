@@ -1,4 +1,4 @@
-<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()" action="enviarCorreo.php" method="POST">
   <mat-card class="shipping-card">
     <!-- <mat-card-header>
         <h4 class="highlight" style="color: gray !important">Información para Contactarlo</h4>

@@ -85,7 +85,17 @@ html {
     margin-bottom: 0px;
     z-index: 1999;
     width: 100%;
-    background-color: #4389a2 !important;
+    background-color: rgba(67,137,162, .3) !important;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+  }
+
+  .top-nav-collapse {
+    background-color: rgba(67,137,162, 1) !important; 
+    position: fixed;
   }
 
   .site-section {
@@ -537,7 +547,22 @@ html {
 .title-class, .content-class {
   color: #FFF !important;
 }
+.mat-card-header-text {
+  margin: 0 !important;
+}
+.mat-card-image {
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
 
+.mat-card-image:hover {
+  -moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-o-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);;
+}
 /************************************************************************************
 smaller than 990
 *************************************************************************************/

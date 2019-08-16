@@ -41,7 +41,7 @@ module.exports = "<!--The content below is only a placeholder and can be replace
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"carouselExampleControls\" class=\"carousel slide\" data-ride=\"carousel\" style=\"margin-top: 10px\">\n  <ol class=\"carousel-indicators\">\n    <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>\n    <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>\n    <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>\n  </ol>\n  <div class=\"carousel-inner\">\n    <div class=\"carousel-item active\">\n      <img class=\"img-fluid\" src=\"../../../assets/images/lenguajes-html5.jpg\" min-height=\"800\" class=\"d-block w-100\"\n        alt=\"...\">\n      <div class=\"carousel-caption d-none d-md-block\">\n        <h1>Lenguajes de Programación</h1>\n        <p>El equippo de trabajo domina varios lenguajes de programación para brindarte la mejor solucion en la aplicación.</p>\n      </div>\n    </div>\n    <div class=\"carousel-item\">\n      <img class=\"img-fluid\" src=\"../../../assets/images/fotis-fotopoulos.jpg\" min-height=\"800\" class=\"d-block w-100\"\n        alt=\"...\">\n      <div class=\"carousel-caption d-none d-md-block\">\n        <h1>Tiempo y Calidad</h1>\n        <p>Estamos comprometidos con nuestros clientes a brindarte el servicio de desarrollo en el menor tiemppo posible y con la mejor calidad del mercado.</p>\n      </div>\n    </div>\n    <div class=\"carousel-item\">\n      <img class=\"img-fluid\" src=\"../../../assets/images/choisir-vps-3.jpg\" min-height=\"800\" class=\"d-block w-100\"\n        alt=\"...\">\n      <div class=\"carousel-caption d-none d-md-block\">\n        <h1>Equipos de Alta Tecnologia</h1>\n        <p>Equipos de alta calidad y tecnologia para brindarte asi la seguridad que necesitas en tu aplicación.</p>\n      </div>\n    </div>\n  </div>\n  <a class=\"carousel-control-prev\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"prev\">\n    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a class=\"carousel-control-next\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"next\">\n    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>"
+module.exports = "<div id=\"carouselExampleControls\" class=\"carousel slide\" data-ride=\"carousel\" >\n  <ol class=\"carousel-indicators\">\n    <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>\n    <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>\n    <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>\n  </ol>\n  <div class=\"carousel-inner\">\n    <div class=\"carousel-item active\">\n      <img class=\"img-fluid\" src=\"../../../assets/images/lenguajes-html5.jpg\" min-height=\"800\" class=\"d-block w-100\"\n        alt=\"...\">\n      <div class=\"carousel-caption d-none d-md-block\">\n        <h1>Lenguajes de Programación</h1>\n        <p>El equippo de trabajo domina varios lenguajes de programación para brindarte la mejor solucion en la aplicación.</p>\n      </div>\n    </div>\n    <div class=\"carousel-item\">\n      <img class=\"img-fluid\" src=\"../../../assets/images/fotis-fotopoulos.jpg\" min-height=\"800\" class=\"d-block w-100\"\n        alt=\"...\">\n      <div class=\"carousel-caption d-none d-md-block\">\n        <h1>Tiempo y Calidad</h1>\n        <p>Estamos comprometidos con nuestros clientes a brindarte el servicio de desarrollo en el menor tiemppo posible y con la mejor calidad del mercado.</p>\n      </div>\n    </div>\n    <div class=\"carousel-item\">\n      <img class=\"img-fluid\" src=\"../../../assets/images/choisir-vps-3.jpg\" min-height=\"800\" class=\"d-block w-100\"\n        alt=\"...\">\n      <div class=\"carousel-caption d-none d-md-block\">\n        <h1>Equipos de Alta Tecnologia</h1>\n        <p>Equipos de alta calidad y tecnologia para brindarte asi la seguridad que necesitas en tu aplicación.</p>\n      </div>\n    </div>\n  </div>\n  <a class=\"carousel-control-prev\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"prev\">\n    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a class=\"carousel-control-next\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"next\">\n    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>"
 
 /***/ }),
 
@@ -52,7 +52,18 @@ module.exports = "<div id=\"carouselExampleControls\" class=\"carousel slide\" d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"addressForm\" novalidate (ngSubmit)=\"onSubmit()\">\n  <mat-card class=\"shipping-card\">\n    <!-- <mat-card-header>\n        <h4 class=\"highlight\" style=\"color: gray !important\">Información para Contactarlo</h4>\n      </mat-card-header> -->\n    <mat-card-content>\n      <div class=\"row\">\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Nombre</mat-label>\n            <input matInput placeholder=\"Nombre\" formControlName=\"firstName\">\n            <mat-error *ngIf=\"summited && addressForm.controls['firstName'].hasError('required')\">\n              El Nombre es <strong>Requerido</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Apellido</mat-label>\n            <input matInput placeholder=\"Apellido\" formControlName=\"lastName\">\n            <mat-error *ngIf=\"summited && addressForm.controls['lastName'].hasError('required')\">\n              El Apellido es <strong>Requerido</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Email</mat-label>\n            <input matInput placeholder=\"Email\" formControlName=\"email\" autocomplete=\"off\">\n            <mat-error *ngIf=\"summited && addressForm.controls['email'].hasError('required')\">\n              El Email es <strong>Requerido</strong>\n            </mat-error>\n            <mat-error *ngIf=\"addressForm.controls['email'].hasError('email')\">\n              El Email no es <strong>Valido</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Asunto</mat-label>\n            <input matInput placeholder=\"Asunto\" formControlName=\"asunto\" autocomplete=\"off\" />\n            <mat-error *ngIf=\"summited && addressForm.controls['asunto'].hasError('required')\">\n              El Asunto es <strong>Requerido</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Mensaje</mat-label>\n            <textarea rows=\"3\" style=\"resize: none\" matInput placeholder=\"Mensaje\" formControlName=\"address\"></textarea>\n            <mat-error *ngIf=\"summited && addressForm.controls['address'].hasError('required')\">\n              Mensaje es <strong>Requerido</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Celular</mat-label>\n            <input matInput placeholder=\"Celular\" formControlName=\"celular\">\n          </mat-form-field>\n          <div *ngFor=\"let validation of validation_messages.telefono\">\n            <mat-error\n              *ngIf=\"summited && addressForm.get('celular').hasError(validation.type) && (addressForm.get('celular').dirty || addressForm.get('celular').touched)\">\n              {{ validation.message }}\n            </mat-error>\n          </div>\n        </div>\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Teléfono</mat-label>\n            <input matInput placeholder=\"Teléfono\" formControlName=\"telefono\">\n          </mat-form-field>\n          <div *ngFor=\"let validation of validation_messages.telefono\">\n            <mat-error\n              *ngIf=\"summited && addressForm.get('telefono').hasError(validation.type) && (addressForm.get('telefono').dirty || addressForm.get('telefono').touched)\">\n              {{ validation.message }}\n            </mat-error>\n          </div>\n        </div>\n      </div>\n    </mat-card-content>\n    <mat-card-actions class=\"text-center\">\n      <button mat-flat-button color=\"primary\" style=\"width: 100px !important\" type=\"submit\">\n        <i class=\"fas fa-check\"></i> Enviar\n      </button>\n    </mat-card-actions>\n  </mat-card>\n</form>\n"
+module.exports = "<form [formGroup]=\"addressForm\" novalidate (ngSubmit)=\"onSubmit()\" action=\"enviarCorreo.php\" method=\"POST\">\n  <mat-card class=\"shipping-card\">\n    <!-- <mat-card-header>\n        <h4 class=\"highlight\" style=\"color: gray !important\">Información para Contactarlo</h4>\n      </mat-card-header> -->\n    <mat-card-content>\n      <div class=\"row\">\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Nombre</mat-label>\n            <input matInput placeholder=\"Nombre\" formControlName=\"firstName\">\n            <mat-error *ngIf=\"summited && addressForm.controls['firstName'].hasError('required')\">\n              El Nombre es <strong>Requerido</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Apellido</mat-label>\n            <input matInput placeholder=\"Apellido\" formControlName=\"lastName\">\n            <mat-error *ngIf=\"summited && addressForm.controls['lastName'].hasError('required')\">\n              El Apellido es <strong>Requerido</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Email</mat-label>\n            <input matInput placeholder=\"Email\" formControlName=\"email\" autocomplete=\"off\">\n            <mat-error *ngIf=\"summited && addressForm.controls['email'].hasError('required')\">\n              El Email es <strong>Requerido</strong>\n            </mat-error>\n            <mat-error *ngIf=\"addressForm.controls['email'].hasError('email')\">\n              El Email no es <strong>Valido</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Asunto</mat-label>\n            <input matInput placeholder=\"Asunto\" formControlName=\"asunto\" autocomplete=\"off\" />\n            <mat-error *ngIf=\"summited && addressForm.controls['asunto'].hasError('required')\">\n              El Asunto es <strong>Requerido</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Mensaje</mat-label>\n            <textarea rows=\"3\" style=\"resize: none\" matInput placeholder=\"Mensaje\" formControlName=\"address\"></textarea>\n            <mat-error *ngIf=\"summited && addressForm.controls['address'].hasError('required')\">\n              Mensaje es <strong>Requerido</strong>\n            </mat-error>\n          </mat-form-field>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Celular</mat-label>\n            <input matInput placeholder=\"Celular\" formControlName=\"celular\">\n          </mat-form-field>\n          <div *ngFor=\"let validation of validation_messages.telefono\">\n            <mat-error\n              *ngIf=\"summited && addressForm.get('celular').hasError(validation.type) && (addressForm.get('celular').dirty || addressForm.get('celular').touched)\">\n              {{ validation.message }}\n            </mat-error>\n          </div>\n        </div>\n        <div class=\"col\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <mat-label>Teléfono</mat-label>\n            <input matInput placeholder=\"Teléfono\" formControlName=\"telefono\">\n          </mat-form-field>\n          <div *ngFor=\"let validation of validation_messages.telefono\">\n            <mat-error\n              *ngIf=\"summited && addressForm.get('telefono').hasError(validation.type) && (addressForm.get('telefono').dirty || addressForm.get('telefono').touched)\">\n              {{ validation.message }}\n            </mat-error>\n          </div>\n        </div>\n      </div>\n    </mat-card-content>\n    <mat-card-actions class=\"text-center\">\n      <button mat-flat-button color=\"primary\" style=\"width: 100px !important\" type=\"submit\">\n        <i class=\"fas fa-check\"></i> Enviar\n      </button>\n    </mat-card-actions>\n  </mat-card>\n</form>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/img-card/img-card.component.html":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/img-card/img-card.component.html ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-card class=\"example-card\">\n  <mat-card-header>\n    <mat-card-title>{{ cardtitle }} </mat-card-title>\n    <mat-card-subtitle>{{ cardsubtitle }}</mat-card-subtitle>\n  </mat-card-header>\n  <mat-card-content>\n    <img class=\"mat-card-image img-fluid\" mat-card-image [src]=\"src\" alt=\"Photo of a Shiba Inu\">\n  </mat-card-content>\n  <mat-card-actions>\n    <a mat-button class=\"btn btn-price btn-outline-primary\">Contactanos</a>\n    <a mat-button class=\"btn btn-price btn-outline-secondary\">Previa</a>\n  </mat-card-actions>\n</mat-card>"
 
 /***/ }),
 
@@ -129,7 +140,7 @@ module.exports = "<div class=\"container mt-5\">\n  <div class=\"row contact-row
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-carousel style=\"margin-top: 10px\" data-aos=\"zoom-in\"></app-carousel>\r\n<div class=\"container-fluid services-1-wrap\" data-aos=\"zoom-in\">\r\n  <div class=\"row mt-5 justify-content-center text-center\" data-aos=\"fade-up\">\r\n    <div class=\"col-lg-5\">\r\n      <h3 class=\"section-subtitle\">Qué Servicios Ofrecemos?</h3>\r\n      <h2 class=\"section-title mb-4 text-black\">Somos una <strong>Empresa Lider</strong> en Diseño, Desarrollo y\r\n        Programación. Ya que nos gusta lo que hacemos\r\n      </h2>\r\n    </div>\r\n  </div>\r\n  <div class=\"row no-gutters\" data-aos=\"fade-up\">\r\n    <div class=\"col-lg-3 col-md-6 col-sm-6\">\r\n      <div class=\"service-1\">\r\n        <span class=\"number\">01</span>\r\n        <div class=\"service-1-icon\">\r\n          <span class=\"flaticon-engineer\"></span>\r\n        </div>\r\n        <div class=\"service-1-content\">\r\n          <h3 class=\"service-heading\">Equipo Profesional</h3>\r\n          <p class=\"text-justify\">Contamos con un personal capacitado en el area para brindarte la mejor asesoria en lo que necesites.</p>\r\n        </div>\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"onAbout()\">\r\n          <i class=\"fal fa-eye\"></i> Leer Más\r\n        </button>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-lg-3 col-md-6 col-sm-6\">\r\n      <div class=\"service-1\">\r\n        <span class=\"number\">02</span>\r\n        <div class=\"service-1-icon\">\r\n          <span class=\"flaticon-compass\"></span>\r\n        </div>\r\n        <div class=\"service-1-content\">\r\n          <h4 class=\"service-heading\">Grandes Ideas</h4>\r\n          <p class=\"text-justify\">Proyectos hechos con ideas modernas e innovadoras que haran que tu web tenga un diseño contemporaneo</p>\r\n        </div>\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"onProjects()\">\r\n          <i class=\"fal fa-eye\"></i> Leer Más\r\n        </button>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-lg-3 col-md-6 col-sm-6\">\r\n      <div class=\"service-1\">\r\n        <span class=\"number\">03</span>\r\n        <div class=\"service-1-icon\">\r\n          <span class=\"flaticon-oil-platform\"></span>\r\n        </div>\r\n        <div class=\"service-1-content\">\r\n          <h4 class=\"service-heading\">Infraestructura</h4>\r\n          <p class=\"text-justify\">Los Servidores se encuentran en la mejor condicion para asegurar el buen funcionamiento de tu aplicacion</p>\r\n        </div>\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"onAbout()\">\r\n          <i class=\"fal fa-eye\"></i> Leer Más\r\n        </button>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-lg-3 col-md-6 col-sm-6\">\r\n      <div class=\"service-1\">\r\n        <span class=\"number\">04</span>\r\n        <div class=\"service-1-icon\">\r\n          <span class=\"flaticon-crane\"></span>\r\n        </div>\r\n        <div class=\"service-1-content\">\r\n          <h4 class=\"service-heading\">Trabajo de Calidad</h4>\r\n          <p class=\"text-justify\">Nuestros diseños cumplen con las buenas practicas de programación logrando asi tener un codigo flexible.</p>\r\n        </div>\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"onProjects()\">\r\n          <i class=\"fal fa-eye\"></i> Leer Más\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"site-section\">\r\n  <div class=\"block-2\" data-aos=\"zoom-in\" style=\"background-color: #4389a2; padding: 7rem 0; margin-top: 2em;\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-6 mb-4 mb-lg-0\">\r\n          <img src=\"../../../assets/images/programacion_poster.jpg\" alt=\"Image \" class=\"img-fluid img-overlap\"\r\n            style=\"margin-top: -150px;\">\r\n        </div>\r\n        <div class=\"col-lg-5 ml-auto\">\r\n          <h3 class=\"section-subtitle\">Por qué Elegirnos?</h3>\r\n          <h2 class=\"section-title mb-4\">Mas de <strong>5 años de experiencia</strong> en programación</h2>\r\n          <div class=\"row my-5\">\r\n            <div class=\"col-lg-12 d-flex align-items-center\">\r\n              <span class=\"line-height-0 flaticon-mortarboard display-4 mr-4 text-warning\"></span>\r\n              <div>\r\n                <h4 class=\"m-0 h5 text-white\">Expertos en el Area</h4>\r\n                <p class=\"text-white text-justify\">\r\n                  Contamos con un equipo de trabajo con experiencia que ha \r\n                  participado en desarrollos para diferentes empresas del mercado.\r\n                </p>\r\n              </div>\r\n            </div>\r\n            <div class=\"col-lg-12 d-flex align-items-center\">\r\n              <span class=\"line-height-0 flaticon-idea display-4 mr-4 text-warning\"></span>\r\n              <div>\r\n                <h4 class=\"m-0 h5 text-white\">Diseños Modernos</h4>\r\n                <p class=\"text-white text-justify\">\r\n                  Nuestros diseños se adaptan al dispositivo desde donde estas \r\n                  ingresando y cuentan con una interfaz grafica moderna.\r\n                </p>\r\n              </div>\r\n            </div>\r\n            <div class=\"col-lg-12 d-flex align-items-center\">\r\n                <span class=\"line-height-0 flaticon-planning display-4 mr-4 text-warning\"></span>\r\n                <div>\r\n                  <h4 class=\"m-0 h5 text-white\">Precios Competitivos</h4>\r\n                  <p class=\"text-white text-justify\">Ofrecemos los mejores precios y los mas competitivos del mercado.</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-12 d-flex align-items-center\">\r\n              <span class=\"line-height-0 flaticon-diploma display-4 mr-4 text-warning\"></span>\r\n              <div>\r\n                <h4 class=\"m-0 h5 text-white\">Capacitación Continua</h4>\r\n                <p class=\"text-white text-justify\">\r\n                  Nuestro equipo recibe capacitacion continua debido a \r\n                  la rapida evolución que existe en el mercado del internet.\r\n                </p>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<app-carousel data-aos=\"zoom-in\"></app-carousel>\r\n<div class=\"container-fluid services-1-wrap\" data-aos=\"zoom-in\">\r\n  <div class=\"row justify-content-center text-center\" data-aos=\"fade-up\">\r\n    <div class=\"col-lg-5\">\r\n      <h3 class=\"section-subtitle\">Qué Servicios Ofrecemos?</h3>\r\n      <h2 class=\"section-title mb-4 text-black\">Somos una <strong>Empresa Lider</strong> en Diseño, Desarrollo y\r\n        Programación. Ya que nos gusta lo que hacemos\r\n      </h2>\r\n    </div>\r\n  </div>\r\n  <div class=\"row no-gutters\" data-aos=\"fade-up\">\r\n    <div class=\"col-lg-3 col-md-6 col-sm-6\">\r\n      <div class=\"service-1\">\r\n        <span class=\"number\">01</span>\r\n        <div class=\"service-1-icon\">\r\n          <span class=\"flaticon-engineer\"></span>\r\n        </div>\r\n        <div class=\"service-1-content\">\r\n          <h3 class=\"service-heading\">Equipo Profesional</h3>\r\n          <p class=\"text-justify\">Contamos con un personal capacitado en el area para brindarte la mejor asesoria en lo que necesites.</p>\r\n        </div>\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"onAbout()\">\r\n          <i class=\"fal fa-eye\"></i> Leer Más\r\n        </button>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-lg-3 col-md-6 col-sm-6\">\r\n      <div class=\"service-1\">\r\n        <span class=\"number\">02</span>\r\n        <div class=\"service-1-icon\">\r\n          <span class=\"flaticon-compass\"></span>\r\n        </div>\r\n        <div class=\"service-1-content\">\r\n          <h4 class=\"service-heading\">Grandes Ideas</h4>\r\n          <p class=\"text-justify\">Proyectos hechos con ideas modernas e innovadoras que haran que tu web tenga un diseño contemporaneo</p>\r\n        </div>\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"onProjects()\">\r\n          <i class=\"fal fa-eye\"></i> Leer Más\r\n        </button>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-lg-3 col-md-6 col-sm-6\">\r\n      <div class=\"service-1\">\r\n        <span class=\"number\">03</span>\r\n        <div class=\"service-1-icon\">\r\n          <span class=\"flaticon-oil-platform\"></span>\r\n        </div>\r\n        <div class=\"service-1-content\">\r\n          <h4 class=\"service-heading\">Infraestructura</h4>\r\n          <p class=\"text-justify\">Los Servidores se encuentran en la mejor condicion para asegurar el buen funcionamiento de tu aplicacion</p>\r\n        </div>\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"onAbout()\">\r\n          <i class=\"fal fa-eye\"></i> Leer Más\r\n        </button>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-lg-3 col-md-6 col-sm-6\">\r\n      <div class=\"service-1\">\r\n        <span class=\"number\">04</span>\r\n        <div class=\"service-1-icon\">\r\n          <span class=\"flaticon-crane\"></span>\r\n        </div>\r\n        <div class=\"service-1-content\">\r\n          <h4 class=\"service-heading\">Trabajo de Calidad</h4>\r\n          <p class=\"text-justify\">Nuestros diseños cumplen con las buenas practicas de programación logrando asi tener un codigo flexible.</p>\r\n        </div>\r\n        <button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"onProjects()\">\r\n          <i class=\"fal fa-eye\"></i> Leer Más\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"site-section\">\r\n  <div class=\"block-2\" data-aos=\"zoom-in\" style=\"background-color: #4389a2; padding: 7rem 0; margin-top: 2em;\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-lg-6 mb-4 mb-lg-0\">\r\n          <img src=\"../../../assets/images/programacion_poster.jpg\" alt=\"Image \" class=\"img-fluid img-overlap\"\r\n            style=\"margin-top: -150px;\">\r\n        </div>\r\n        <div class=\"col-lg-5 ml-auto\">\r\n          <h3 class=\"section-subtitle\">Por qué Elegirnos?</h3>\r\n          <h2 class=\"section-title mb-4\">Mas de <strong>5 años de experiencia</strong> en programación</h2>\r\n          <div class=\"row my-5\">\r\n            <div class=\"col-lg-12 d-flex align-items-center\">\r\n              <span class=\"line-height-0 flaticon-mortarboard display-4 mr-4 text-warning\"></span>\r\n              <div>\r\n                <h4 class=\"m-0 h5 text-white\">Expertos en el Area</h4>\r\n                <p class=\"text-white text-justify\">\r\n                  Contamos con un equipo de trabajo con experiencia que ha \r\n                  participado en desarrollos para diferentes empresas del mercado.\r\n                </p>\r\n              </div>\r\n            </div>\r\n            <div class=\"col-lg-12 d-flex align-items-center\">\r\n              <span class=\"line-height-0 flaticon-idea display-4 mr-4 text-warning\"></span>\r\n              <div>\r\n                <h4 class=\"m-0 h5 text-white\">Diseños Modernos</h4>\r\n                <p class=\"text-white text-justify\">\r\n                  Nuestros diseños se adaptan al dispositivo desde donde estas \r\n                  ingresando y cuentan con una interfaz grafica moderna.\r\n                </p>\r\n              </div>\r\n            </div>\r\n            <div class=\"col-lg-12 d-flex align-items-center\">\r\n                <span class=\"line-height-0 flaticon-planning display-4 mr-4 text-warning\"></span>\r\n                <div>\r\n                  <h4 class=\"m-0 h5 text-white\">Precios Competitivos</h4>\r\n                  <p class=\"text-white text-justify\">Ofrecemos los mejores precios y los mas competitivos del mercado.</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-12 d-flex align-items-center\">\r\n              <span class=\"line-height-0 flaticon-diploma display-4 mr-4 text-warning\"></span>\r\n              <div>\r\n                <h4 class=\"m-0 h5 text-white\">Capacitación Continua</h4>\r\n                <p class=\"text-white text-justify\">\r\n                  Nuestro equipo recibe capacitacion continua debido a \r\n                  la rapida evolución que existe en el mercado del internet.\r\n                </p>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -162,7 +173,7 @@ module.exports = "<div class=\"site-wrap\">\n  <app-navbar></app-navbar>\n  <rou
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" style=\"margin: 5em 0\">\n  <div class=\"row\" data-aos=\"zoom-in\">\n    <div class=\"col-lg-8\" style=\"padding-top: 3em\">\n      <h3>Dominio</h3>\n      <div class=\"box text-justify\">\n        <p>Un dominio o nombre de dominio es el nombre que identifica un sitio web.\n          Cada dominio tiene que ser único en Internet. Por ejemplo, \"www.masadelante.com\"\n          es el nombre de dominio de la página web de Masadelante. Un solo servidor web puede\n          servir múltiples páginas web de múltiples dominios, pero un dominio sólo puede apuntar\n          a un servidor..</p>\n      </div>\n\n    </div>\n    <div class=\"col-lg-4\">\n      <img class=\"img-fluid\" src=\"../../../../assets/images/domains.png\" width=\"400px\" height=\"400px\" alt=\"\">\n    </div>\n  </div>\n  <div class=\"row mt-5\" data-aos=\"zoom-in\">\n    <div class=\"col-md-4\">\n      <h4>Registrar Dominio</h4>\n      <mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.position}} </mat-cell>\n        </ng-container>\n        <!-- Dominio Column -->\n        <ng-container matColumnDef=\"dominio\">\n          <mat-header-cell *matHeaderCellDef> Dominio </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.dominio}} </mat-cell>\n        </ng-container>\n        <!-- Precio Column -->\n        <ng-container matColumnDef=\"precio\">\n          <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.precio}} </mat-cell>\n        </ng-container>\n        <!-- Symbol Moneda -->\n        <ng-container matColumnDef=\"moneda\">\n          <mat-header-cell *matHeaderCellDef> Moneda </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.moneda}} </mat-cell>\n        </ng-container>\n        <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n        <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n      </mat-table>\n    </div>\n    <div class=\"col-md-8\">\n      <div class=\"row\">\n        <h3 class=\"col-md-3\" style=\"padding-top: 15px\">Buscar Dominio</h3>\n        <div class=\"col-md-9 form-inline\">\n          <form action=\"buscador.php\" method=\"POST\" #f=\"ngForm\" novalidate style=\"width: 100%;\">\n            <mat-form-field class=\"full-width\" style=\"width: 90% !important\" appearance=\"outline\">\n              <!-- <mat-label>Dominio</mat-label> -->\n              <input matInput placeholder=\"Dominio\" name=\"dominio\" (keyup.enter)=\"buscarDominio(dominio, extension)\" [(ngModel)]=\"dominio\" required>\n              <mat-select name=\"extension\" style=\"width: 25%\" class=\"ampm\" [(ngModel)]=\"extension\">\n                  <mat-option *ngFor=\"let item of dominios\" [value]=\"item.dominio\" >{{item.dominio}}</mat-option>\n             </mat-select>\n              <button type=\"submit\" mat-icon-button matPrefix (click)=\"buscarDominio(dominio, extension)\" style=\"padding-top: 15px !important\">\n                <mat-icon>search2</mat-icon>\n              </button>\n              <mat-error *ngIf=\"f.invalid && submited\">{{error}}</mat-error>\n            </mat-form-field>\n          </form>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <h4> Tipos de Dominios</h4>\n          <ul>\n            <li>\n              <h5 style=\"margin-top: 1em\">Dominios de Nivel Superior Genéricos</h5>\n              <p class=\"text-justify\">\n                Este tipo de dominios son los de uso común y más utlizados\n                a nivel mundial, no se ajustan a un país determinado y sus\n                terminaciones definen el concepto para el cual se utilizan:\n              </p>\n              <ul>\n                <li>\n                  <span style=\"font-weight: 400\">.com:</span> Sitio comercial\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.net:</span> Empresa de servicios de Internet\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.org:</span> Organización sin fines de lucro\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.info:</span> Sitio informativo\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.biz:</span> Sitio de negocios\n                </li>\n              </ul>\n            </li>\n            <li>\n              <h5 style=\"margin-top: 1em\">Dominios de Nivel Superior Geográfico</h5>\n              <p class=\"text-justify\"> Son conocidos también como dominios\n                territoriales y son usados por países o territorios dependientes;\n                se componen de 2 caracteres.</p>\n              <ul>\n                <li>\n                  <span style=\"font-weight: 400\">.ve:</span> Venezuela\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.co:</span> Colombia\n                </li>\n              </ul>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  <br />\n  <app-pagos></app-pagos>\n</div>"
+module.exports = "<div class=\"container-fluid\" style=\"margin: 5em 0\">\n  <div class=\"row\" data-aos=\"zoom-in\">\n    <div class=\"col-lg-8\" style=\"padding-top: 3em\">\n      <h3>Dominio</h3>\n      <div class=\"box text-justify\">\n        <p>Un dominio o nombre de dominio es el nombre que identifica un sitio web.\n          Cada dominio tiene que ser único en Internet. Por ejemplo, \"www.masadelante.com\"\n          es el nombre de dominio de la página web de Masadelante. Un solo servidor web puede\n          servir múltiples páginas web de múltiples dominios, pero un dominio sólo puede apuntar\n          a un servidor..</p>\n      </div>\n\n    </div>\n    <div class=\"col-lg-4\">\n      <img class=\"img-fluid\" src=\"../../../../assets/images/domains.png\" width=\"400px\" height=\"400px\" alt=\"\">\n    </div>\n  </div>\n  <div class=\"row mt-5\" data-aos=\"zoom-in\">\n    <div class=\"col-md-4\">\n      <h4>Registrar Dominio</h4>\n      <mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n        <!-- Position Column -->\n        <ng-container matColumnDef=\"position\">\n          <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.position}} </mat-cell>\n        </ng-container>\n        <!-- Dominio Column -->\n        <ng-container matColumnDef=\"dominio\">\n          <mat-header-cell *matHeaderCellDef> Dominio </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.dominio}} </mat-cell>\n        </ng-container>\n        <!-- Precio Column -->\n        <ng-container matColumnDef=\"precio\">\n          <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.precio}} </mat-cell>\n        </ng-container>\n        <!-- Symbol Moneda -->\n        <ng-container matColumnDef=\"moneda\">\n          <mat-header-cell *matHeaderCellDef> Moneda </mat-header-cell>\n          <mat-cell *matCellDef=\"let element\"> {{element.moneda}} </mat-cell>\n        </ng-container>\n        <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n        <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n      </mat-table>\n    </div>\n    <div class=\"col-md-8\">\n      <div class=\"row\">\n        <h3 class=\"col-md-3\" style=\"padding-top: 15px\">Buscar Dominio</h3>\n        <div class=\"col-md-9 form-inline\">\n          <form action=\"buscador.php\" method=\"POST\" #f=\"ngForm\" novalidate style=\"width: 100%;\">\n            <mat-form-field class=\"full-width\" style=\"width: 90% !important\" appearance=\"outline\">\n              <!-- <mat-label>Dominio</mat-label> -->\n              <input matInput placeholder=\"Dominio\" name=\"dominio\" (keyup.enter)=\"buscarDominio(dominio, extension)\"\n                [(ngModel)]=\"dominio\" required>\n              <mat-select name=\"extension\" style=\"width: 25%\" class=\"ampm\" [(ngModel)]=\"extension\">\n                <mat-option *ngFor=\"let item of dominios\" [value]=\"item.dominio\">{{item.dominio}}</mat-option>\n              </mat-select>\n              <button type=\"submit\" mat-icon-button matPrefix (click)=\"buscarDominio(dominio, extension)\"\n                style=\"padding-top: 15px !important\">\n                <mat-icon>search2</mat-icon>\n              </button>\n              <mat-error *ngIf=\"f.invalid && submited\">{{error}}</mat-error>\n            </mat-form-field>\n          </form>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <h4> Tipos de Dominios</h4>\n          <ul>\n            <li>\n              <h5 style=\"margin-top: 1em\">Dominios de Nivel Superior Genéricos</h5>\n              <p class=\"text-justify\">\n                Este tipo de dominios son los de uso común y más utlizados\n                a nivel mundial, no se ajustan a un país determinado y sus\n                terminaciones definen el concepto para el cual se utilizan:\n              </p>\n              <ul>\n                <li>\n                  <span style=\"font-weight: 400\">.com:</span> Sitio comercial\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.net:</span> Empresa de servicios de Internet\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.org:</span> Organización sin fines de lucro\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.info:</span> Sitio informativo\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.biz:</span> Sitio de negocios\n                </li>\n              </ul>\n            </li>\n            <li>\n              <h5 style=\"margin-top: 1em\">Dominios de Nivel Superior Geográfico</h5>\n              <p class=\"text-justify\"> Son conocidos también como dominios\n                territoriales y son usados por países o territorios dependientes;\n                se componen de 2 caracteres.</p>\n              <ul>\n                <li>\n                  <span style=\"font-weight: 400\">.ve:</span> Venezuela\n                </li>\n                <li>\n                  <span style=\"font-weight: 400\">.co:</span> Colombia\n                </li>\n              </ul>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  <br />\n  <div class=\"row\" data-aos=\"zoom-in\">\n    <div class=\"col-md-12\">\n      <h4>Plantillas Listas</h4>\n    </div>\n    <div class=\"col-lg-4\" *ngFor=\"let item of src\">\n      <app-img-card [src]=\"item.path\" [cardtitle]=\"item.cardtitle\" [cardsubtitle]=\"item.cardsubtitle\"></app-img-card>\n    </div>\n  </div>\n  <br />\n  <app-pagos></app-pagos>\n</div>"
 
 /***/ }),
 
@@ -451,6 +462,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _messages_messages_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./messages/messages.component */ "./src/app/components/messages/messages.component.ts");
 /* harmony import */ var _pagos_pagos_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pagos/pagos.component */ "./src/app/components/pagos/pagos.component.ts");
+/* harmony import */ var _img_card_img_card_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./img-card/img-card.component */ "./src/app/components/img-card/img-card.component.ts");
+
 
 
 
@@ -471,7 +484,7 @@ let ComponentsModule = class ComponentsModule {
 };
 ComponentsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_carousel_carousel_component__WEBPACK_IMPORTED_MODULE_4__["CarouselComponent"], _contact_form_contact_form_component__WEBPACK_IMPORTED_MODULE_5__["ContactFormComponent"], _messages_messages_component__WEBPACK_IMPORTED_MODULE_14__["MessagesComponent"], _pagos_pagos_component__WEBPACK_IMPORTED_MODULE_15__["PagosComponent"]],
+        declarations: [_carousel_carousel_component__WEBPACK_IMPORTED_MODULE_4__["CarouselComponent"], _contact_form_contact_form_component__WEBPACK_IMPORTED_MODULE_5__["ContactFormComponent"], _messages_messages_component__WEBPACK_IMPORTED_MODULE_14__["MessagesComponent"], _pagos_pagos_component__WEBPACK_IMPORTED_MODULE_15__["PagosComponent"], _img_card_img_card_component__WEBPACK_IMPORTED_MODULE_16__["ImgCardComponent"]],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _layout_layout_module__WEBPACK_IMPORTED_MODULE_3__["LayoutModule"],
@@ -490,6 +503,7 @@ ComponentsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _contact_form_contact_form_component__WEBPACK_IMPORTED_MODULE_5__["ContactFormComponent"],
             _messages_messages_component__WEBPACK_IMPORTED_MODULE_14__["MessagesComponent"],
             _pagos_pagos_component__WEBPACK_IMPORTED_MODULE_15__["PagosComponent"],
+            _img_card_img_card_component__WEBPACK_IMPORTED_MODULE_16__["ImgCardComponent"],
             _angular_material_input__WEBPACK_IMPORTED_MODULE_6__["MatInputModule"],
             _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"],
             _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"],
@@ -529,12 +543,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _services_alert_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/alert.service */ "./src/app/services/alert.service.ts");
+
 
 
 
 let ContactFormComponent = class ContactFormComponent {
-    constructor(fb) {
+    constructor(fb, alertaservice) {
         this.fb = fb;
+        this.alertaservice = alertaservice;
         this.summited = false;
         this.validation_messages = {};
         this.validation_messages = {
@@ -587,8 +604,7 @@ let ContactFormComponent = class ContactFormComponent {
             ]
         });
     }
-    ngOnInit() {
-    }
+    ngOnInit() { }
     get f() {
         return this.addressForm.controls;
     }
@@ -598,11 +614,36 @@ let ContactFormComponent = class ContactFormComponent {
             console.log(this.f.firstName.value);
             return;
         }
-        alert("Thanks!");
+        $.ajax({
+            url: 'enviarCorreo.php',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                firstName: this.f.firstName.value,
+                lastName: this.f.lastName.value,
+                email: this.f.email.value,
+                asunto: this.f.asunto.value,
+                celular: this.f.celular.value,
+                telefono: this.f.telefono.value,
+                address: this.f.address.value
+            }
+        }).done((data) => {
+            if (data.ok) {
+                this.alertaservice.setMensaje('success', 'Excelente!..', data.mensaje, 5000);
+            }
+            else {
+                this.alertaservice.setMensaje('error', 'Ops!..', data.mensaje, 5000);
+            }
+        }).fail((err) => {
+            console.log(err);
+        }).always(() => {
+            console.log('solicitud completa');
+        });
     }
 };
 ContactFormComponent.ctorParameters = () => [
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: _services_alert_service__WEBPACK_IMPORTED_MODULE_3__["AlertService"] }
 ];
 ContactFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -610,8 +651,55 @@ ContactFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./contact-form.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/contact-form/contact-form.component.html"),
         styles: [__webpack_require__(/*! ./contact-form.component.css */ "./src/app/components/contact-form/contact-form.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _services_alert_service__WEBPACK_IMPORTED_MODULE_3__["AlertService"]])
 ], ContactFormComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/img-card/img-card.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/components/img-card/img-card.component.ts ***!
+  \***********************************************************/
+/*! exports provided: ImgCardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImgCardComponent", function() { return ImgCardComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let ImgCardComponent = class ImgCardComponent {
+    constructor() {
+        this.src = '';
+        this.cardtitle = '';
+        this.cardsubtitle = '';
+    }
+    ngOnInit() {
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], ImgCardComponent.prototype, "src", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], ImgCardComponent.prototype, "cardtitle", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], ImgCardComponent.prototype, "cardsubtitle", void 0);
+ImgCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-img-card',
+        template: __webpack_require__(/*! raw-loader!./img-card.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/img-card/img-card.component.html")
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], ImgCardComponent);
 
 
 
@@ -937,6 +1025,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PagesComponent", function() { return PagesComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var node_waves__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! node-waves */ "./node_modules/node-waves/src/js/waves.js");
+/* harmony import */ var node_waves__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(node_waves__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 let PagesComponent = class PagesComponent {
@@ -948,10 +1039,18 @@ let PagesComponent = class PagesComponent {
                 $(".to-top").fadeIn();
             else
                 $(".to-top").fadeOut();
+            if ($('.navbar').offset().top > 50) {
+                $('.navbar-light').addClass('top-nav-collapse');
+            }
+            else {
+                $('.navbar-light').removeClass('top-nav-collapse');
+            }
         });
         $(".to-top").click(function (e) {
             $("html, body").animate({ scrollTop: 0 }, 600);
         });
+        node_waves__WEBPACK_IMPORTED_MODULE_2__["attach"]('.navbar-nav a:not(.navbar-brand), .nav-item:not(.dropdown)', ['waves-light']);
+        node_waves__WEBPACK_IMPORTED_MODULE_2__["init"]();
     }
 };
 PagesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1068,33 +1167,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const ELEMENT_DATA = [
-    { position: 1, dominio: ".net", precio: 250000, moneda: "BsS." },
-    { position: 2, dominio: ".com", precio: 210000, moneda: "BsS." },
-    { position: 3, dominio: ".org", precio: 240000, moneda: "BsS." },
-    { position: 4, dominio: ".info", precio: 250000, moneda: "BsS." },
-    { position: 5, dominio: ".biz", precio: 280000, moneda: "BsS." },
-    { position: 6, dominio: ".net.ve", precio: 22000, moneda: "BsS." },
-    { position: 7, dominio: ".com.ve", precio: 22000, moneda: "BsS." },
-    { position: 8, dominio: ".org.ve", precio: 22000, moneda: "BsS." },
-    { position: 9, dominio: ".co.ve", precio: 22000, moneda: "BsS." },
-    { position: 10, dominio: ".web.ve", precio: 22000, moneda: "BsS." },
-    { position: 11, dominio: ".info.ve", precio: 22000, moneda: "BsS." }
+    { position: 1, dominio: '.net', precio: 250000, moneda: 'BsS.' },
+    { position: 2, dominio: '.com', precio: 210000, moneda: 'BsS.' },
+    { position: 3, dominio: '.org', precio: 240000, moneda: 'BsS.' },
+    { position: 4, dominio: '.info', precio: 250000, moneda: 'BsS.' },
+    { position: 5, dominio: '.biz', precio: 280000, moneda: 'BsS.' },
+    { position: 6, dominio: '.ve', precio: 22000, moneda: 'BsS.' }
 ];
 let ServiceExtraComponent = class ServiceExtraComponent {
     constructor(dominioService, alertaservice) {
         this.dominioService = dominioService;
         this.alertaservice = alertaservice;
         this.dominios = [];
-        this.displayedColumns = ["position", "dominio", "precio", "moneda"];
+        this.displayedColumns = ['position', 'dominio', 'precio', 'moneda'];
         this.dataSource = ELEMENT_DATA;
-        this.Incremento = 0;
         this.error = 'Debes Ingresar un dominio valido, ejemplo www.google.com';
         this.extension = '.com';
-        this.incremento = 0;
         this.submited = false;
+        this.src = [];
     }
     ngOnInit() {
         this.dominios = ELEMENT_DATA;
+        this.src = [
+            {
+                path: '../../../../assets/images/landing-page.png',
+                cardtitle: 'Landing Page',
+                cardsubtitle: 'HTML5-BS4'
+            },
+            {
+                path: '../../../../assets/images/landing-page.png',
+                cardtitle: 'Smarty Template',
+                cardsubtitle: 'HTML5-BS4'
+            },
+            {
+                path: '../../../../assets/images/chamelong-template.jpg',
+                cardtitle: 'Chamelon',
+                cardsubtitle: 'HTML5-BS4'
+            }
+        ];
     }
     buscarDominio(texto, extension) {
         this.submited = true;
@@ -1102,26 +1212,22 @@ let ServiceExtraComponent = class ServiceExtraComponent {
             this.alertaservice.setMensaje('warning', 'Atención.', 'Debes Ingresar un dominio formato www.google.com', 5000);
             return;
         }
-        $.ajax({
-            url: 'buscador.php',
-            type: 'POST',
-            dataType: 'json',
-            data: { Nomb: texto, "Ext": extension, "Incremento": this.Incremento++ },
-        }).done((data) => {
+        this.dominioService
+            .buscarDominio(texto, extension)
+            .done(data => {
             if (data.disponible) {
                 this.alertaservice.setMensaje('success', 'Excelente!..', 'El Dominio ' + texto + extension + ' esta disponible', 5000);
             }
             else {
                 this.alertaservice.setMensaje('error', 'Ops!..', 'El Dominio ' + texto + extension + ' no esta disponible', 5000);
             }
-        }).fail((err) => {
-            console.log(err);
-        }).always(() => {
+        })
+            .fail(err => {
+            this.alertaservice.setMensaje('error', 'Ops!..', 'Error: ' + err.status + ' Codigo: ' + err.statusText, 5000);
+        })
+            .always(() => {
             console.log('solicitud completa');
         });
-        // this.dominioService.buscarDominio(dominio).subscribe( (data) => {
-        //   console.log(data);
-        // });
     }
 };
 ServiceExtraComponent.ctorParameters = () => [
@@ -1130,10 +1236,11 @@ ServiceExtraComponent.ctorParameters = () => [
 ];
 ServiceExtraComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: "app-service-extra",
+        selector: 'app-service-extra',
         template: __webpack_require__(/*! raw-loader!./service-extra.component.html */ "./node_modules/raw-loader/index.js!./src/app/pages/services/service-extra/service-extra.component.html")
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_dominio_service__WEBPACK_IMPORTED_MODULE_2__["DominioService"], _services_alert_service__WEBPACK_IMPORTED_MODULE_3__["AlertService"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_dominio_service__WEBPACK_IMPORTED_MODULE_2__["DominioService"],
+        _services_alert_service__WEBPACK_IMPORTED_MODULE_3__["AlertService"]])
 ], ServiceExtraComponent);
 
 
@@ -1275,31 +1382,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DominioService", function() { return DominioService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 
 
-
-let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
 let DominioService = class DominioService {
-    constructor(http) {
-        this.http = http;
-        this.headers = headers.append('Access-Control-Allow-Origin', '*');
-        this.URL_SERVICIO = 'https://api.jsonwhois.io/availability';
+    constructor() {
+        this.Incremento = 0;
     }
-    buscarDominio(domain) {
-        const key = 'hDnnOl0AHJ0rF5pOdODto2Q4MEfdqCWj';
-        const url = this.URL_SERVICIO + `?key=${key}&domain=${domain}`;
-        return this.http.get(url, { headers }).pipe();
+    buscarDominio(texto, extension) {
+        return $.ajax({
+            url: 'buscador.php',
+            type: 'POST',
+            dataType: 'json',
+            // beforeSend: this.setHeader,
+            data: { Nomb: texto, 'Ext': extension, 'Incremento': this.Incremento++ },
+        });
     }
 };
-DominioService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-];
 DominioService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
 ], DominioService);
 
 

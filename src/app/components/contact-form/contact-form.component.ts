@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators, FormGroup } from "@angular/forms";
 import { MensajeContacto } from "../../types/messages";
+import { AlertService } from '../../services/alert.service';
+
 @Component({
   selector: "app-contact-form",
   templateUrl: "./contact-form.component.html",
@@ -12,7 +14,7 @@ export class ContactFormComponent implements OnInit {
   validation_messages = {};
   mensajeContacto: MensajeContacto;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private alertaservice: AlertService) {
     this.validation_messages = {
       celular: [
         {
@@ -65,9 +67,7 @@ export class ContactFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-   
-  }
+  ngOnInit(): void {}
 
   get f() {
     return this.addressForm.controls;
@@ -81,6 +81,30 @@ export class ContactFormComponent implements OnInit {
       return;
     }
 
-    alert("Thanks!");
+    $.ajax({
+      url: 'enviarCorreo.php',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        firstName: this.f.firstName.value,
+        lastName: this.f.lastName.value,
+        email: this.f.email.value,
+        asunto:  this.f.asunto.value,
+        celular: this.f.celular.value,
+        telefono: this.f.telefono.value,
+        address: this.f.address.value
+      }
+    }).done((data) => {
+      if (data.ok) {
+        this.alertaservice.setMensaje('success', 'Excelente!..', data.mensaje, 5000 );
+      } else {
+        this.alertaservice.setMensaje('error', 'Ops!..', data.mensaje, 5000 );
+      }
+    }).fail((err) => {
+      console.log(err);
+    }).always(() => {
+      console.log('solicitud completa');
+    });
+
   }
 }

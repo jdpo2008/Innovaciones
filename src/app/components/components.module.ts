@@ -13,9 +13,10 @@ import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { PagosComponent } from './pagos/pagos.component';
+import { ImgCardComponent } from './img-card/img-card.component';
 
 @NgModule({
-  declarations: [CarouselComponent, ContactFormComponent, MessagesComponent, PagosComponent],
+  declarations: [CarouselComponent, ContactFormComponent, MessagesComponent, PagosComponent, ImgCardComponent],
   imports: [
       CommonModule,
       LayoutModule,
@@ -34,6 +35,7 @@ import { PagosComponent } from './pagos/pagos.component';
       ContactFormComponent,
       MessagesComponent,
       PagosComponent,
+      ImgCardComponent,
       MatInputModule,
       MatIconModule,
       MatButtonModule,

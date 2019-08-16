@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-
-let headers: HttpHeaders = new HttpHeaders();
+import { AlertService } from './alert.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class DominioService {
-  headers = headers.append( 'Access-Control-Allow-Origin', '*');
-
-  URL_SERVICIO = 'https://api.jsonwhois.io/availability';
-  constructor(private http: HttpClient) {
+  Incremento = 0;
+  constructor() {
   }
 
-  buscarDominio(domain) {
-    const key = 'hDnnOl0AHJ0rF5pOdODto2Q4MEfdqCWj';
-    const url = this.URL_SERVICIO + `?key=${key}&domain=${domain}`;
-
-    return this.http.get(url, {headers}).pipe();
-
+  buscarDominio(texto, extension) {
+    return $.ajax({
+      url: 'buscador.php',
+      type: 'POST',
+      dataType: 'json',
+      // beforeSend: this.setHeader,
+      data: { Nomb: texto, 'Ext': extension, 'Incremento' : this.Incremento++ },
+    });
   }
 
 }
