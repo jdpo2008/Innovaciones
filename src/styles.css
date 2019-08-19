@@ -85,7 +85,7 @@ html {
     margin-bottom: 0px;
     z-index: 1999;
     width: 100%;
-    background-color: rgba(67,137,162, .3) !important;
+    background-color: rgba(67,137,162, 1) !important;
     -webkit-transition: .3s ease-in-out;
     -moz-transition: .3s ease-in-out;
     -ms-transition: .3s ease-in-out;
@@ -215,22 +215,6 @@ html {
     display: inline-block; 
   }
   
-  .ftco-footer-social li a {
-      height: 40px;
-      width: 40px;
-      display: block;
-      float: left;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      position: relative; 
-      -webkit-transition: .5s ease-in-out;
-      -moz-transition: .5s ease-in-out;
-      -ms-transition: .5s ease-in-out;
-      -o-transition: .5s ease-in-out;
-      transition: .5s ease-in-out;
-      color: white;
-    }
-  
     .ftco-footer-social li .twitter:hover{
       background-color: #38A1F3;
     }
@@ -252,10 +236,7 @@ html {
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%); 
   }
-  .ftco-footer-social li a:hover {
-    color: #fff; 
-  }
-
+  
   .person {
     position: relative;
   }
@@ -563,6 +544,148 @@ html {
 -ms-transform: scale(1.1);
 transform: scale(1.1);;
 }
+
+agm-map {
+  height: 300px;
+}
+
+[cwdjParallax] {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
+  background-size: 100%;
+}
+
+#first-example {
+  background-image: url('./assets/images/lenguajes-programacion.jpg');
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+/* Social Icon */
+
+.social{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 50%;
+  align-items: center;
+  align-content: center;
+}
+
+.social-icon {
+	margin: 0 5px 5px 0;
+    width: 40px;
+    height: 40px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    border-color: transparent; 
+    overflow: hidden;
+	display:inline-block;
+	text-decoration:none !important;
+	text-align: center;
+	cursor: pointer;
+  font-style: normal;
+  background: #fff;
+	letter-spacing: 0em !important;
+	/* color: #eaeaea !important;  */
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+			border-radius: 3px;
+}
+
+.social-icon:hover >i {
+    color:#fff;
+}
+
+.social-icon i {
+	display: block;
+	position: relative;
+    width: 40px;
+    height: 40px;
+	margin-top:6px;
+  font-size: 28px;
+  color:#fff;
+}
+
+body:not(.device-touch) .social-icon {
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+body:not(.device-touch) .social-icon i {
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.social-icon:hover i:first-child { 
+	margin-top: -38px; 
+}
+
+.social-icon:hover i:last-child { 
+	margin-top:4px;
+}
+
+/* small */
+a.social-icon.social-icon-sm,
+a.social-icon.social-icon-sm>i {
+	width: 30px;
+	height: 30px;
+	margin-top: 3px;
+	font-size: 17px;
+	line-height: 23px;
+}
+
+a.social-icon.social-icon-sm>i:last-child {
+	padding-top:7px;
+}
+
+a.social-icon.social-icon-sm>i[class*=" fa-"],
+a.social-icon.social-icon-sm>i[class^=fa-] {
+	font-size:17px;
+}
+
+.facebook {
+  color: #3B5998 !important;
+}
+
+.twitter {
+  color: #0E76A8 !important;
+}
+
+.linkedin{
+  color: #0E76A8 !important;
+}
+
+.youtube{
+  color: #C4302B !important;
+}
+
+.social-facebook:hover { background-color: #fff !important; }
+.social-facebook { background-color: #3B5998; }
+.social-gplus:hover { background-color: #DD4B39 !important; }
+.social-gplus { background-color: #DD4B39; }
+.social-google:hover { background-color: #DD4B39 !important; }
+.social-google { background-color: #DD4B39; }
+.social-linkedin:hover { background-color: #fff !important; }
+.social-linkedin { background-color: #0E76A8; }
+.social-rss:hover { background-color: #EE802F !important; }
+.social-rss { background-color: #EE802F; }
+.social-skype:hover { background-color: #00AFF0 !important; }
+.social-skype { background-color: #00AFF0; }
+.social-twitter:hover { background-color: #fff !important; }
+.social-twitter { background-color: #00ACEE; }
+.social-youtube:hover { background-color: #fff !important; }
+.social-youtube { background-color: #C4302B; }
+
+
 /************************************************************************************
 smaller than 990
 *************************************************************************************/

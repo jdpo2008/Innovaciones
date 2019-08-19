@@ -21,14 +21,14 @@ $message .= "<tr><td><strong>Mensaje:</strong> </td><td>" . strip_tags($_POST['a
 $message .= "</table>";
 $message .= "</body></html>";
 
+$Response = new stdClass();
+
 if (mail($to,$subject,$message,$headers)) {
-    $Response = new stdClass();
     $Response->mensaje = 'Tu mensaje fue enviado correctamente.';
     $Response->ok = true;
     $jsonResponse = json_encode($Response);
    
 } else {
-    $Response = new stdClass();
     $Response->mensaje = 'Error al enviar mensaje.';
     $Response->ok = true;
     $jsonResponse = json_encode($Response);

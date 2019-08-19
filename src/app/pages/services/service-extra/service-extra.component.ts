@@ -24,6 +24,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styles: []
 })
 export class ServiceExtraComponent implements OnInit {
+  dominio = '';
   dominios: any[] = [];
   displayedColumns: string[] = ['position', 'dominio', 'precio', 'moneda'];
   dataSource = ELEMENT_DATA;

@@ -11,11 +11,11 @@ import { AlertService } from '../../services/alert.service';
 export class ContactFormComponent implements OnInit {
   addressForm: FormGroup;
   summited = false;
-  validation_messages = {};
+  validationMessages: any;
   mensajeContacto: MensajeContacto;
 
   constructor(private fb: FormBuilder, private alertaservice: AlertService) {
-    this.validation_messages = {
+    this.validationMessages = {
       celular: [
         {
           type: "minlength",
@@ -77,7 +77,6 @@ export class ContactFormComponent implements OnInit {
     this.summited = true;
 
     if (this.addressForm.invalid) {
-      console.log(this.f.firstName.value);
       return;
     }
 
@@ -86,13 +85,13 @@ export class ContactFormComponent implements OnInit {
       type: 'POST',
       dataType: 'json',
       data: {
-        firstName: this.f.firstName.value,
-        lastName: this.f.lastName.value,
-        email: this.f.email.value,
-        asunto:  this.f.asunto.value,
-        celular: this.f.celular.value,
-        telefono: this.f.telefono.value,
-        address: this.f.address.value
+        "firstName": this.f.firstName.value,
+        "lastName": this.f.lastName.value,
+        "email": this.f.email.value,
+        "asunto":  this.f.asunto.value,
+        "celular": this.f.celular.value,
+        "telefono": this.f.telefono.value,
+        "address": this.f.address.value
       }
     }).done((data) => {
       if (data.ok) {

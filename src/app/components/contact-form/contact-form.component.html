@@ -8,7 +8,7 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Nombre</mat-label>
-            <input matInput placeholder="Nombre" formControlName="firstName">
+            <input matInput placeholder="Nombre" name="firstName" formControlName="firstName">
             <mat-error *ngIf="summited && addressForm.controls['firstName'].hasError('required')">
               El Nombre es <strong>Requerido</strong>
             </mat-error>
@@ -17,7 +17,7 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Apellido</mat-label>
-            <input matInput placeholder="Apellido" formControlName="lastName">
+            <input matInput placeholder="Apellido" name="lastName" formControlName="lastName">
             <mat-error *ngIf="summited && addressForm.controls['lastName'].hasError('required')">
               El Apellido es <strong>Requerido</strong>
             </mat-error>
@@ -28,7 +28,7 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Email" formControlName="email" autocomplete="off">
+            <input matInput placeholder="Email" name="email" formControlName="email" autocomplete="off">
             <mat-error *ngIf="summited && addressForm.controls['email'].hasError('required')">
               El Email es <strong>Requerido</strong>
             </mat-error>
@@ -42,7 +42,7 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Asunto</mat-label>
-            <input matInput placeholder="Asunto" formControlName="asunto" autocomplete="off" />
+            <input matInput placeholder="Asunto" name="asunto" formControlName="asunto" autocomplete="off" />
             <mat-error *ngIf="summited && addressForm.controls['asunto'].hasError('required')">
               El Asunto es <strong>Requerido</strong>
             </mat-error>
@@ -53,7 +53,7 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Mensaje</mat-label>
-            <textarea rows="3" style="resize: none" matInput placeholder="Mensaje" formControlName="address"></textarea>
+            <textarea rows="3" style="resize: none" name="address" matInput placeholder="Mensaje" formControlName="address"></textarea>
             <mat-error *ngIf="summited && addressForm.controls['address'].hasError('required')">
               Mensaje es <strong>Requerido</strong>
             </mat-error>
@@ -64,9 +64,9 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Celular</mat-label>
-            <input matInput placeholder="Celular" formControlName="celular">
+            <input matInput placeholder="Celular" name="celular" formControlName="celular">
           </mat-form-field>
-          <div *ngFor="let validation of validation_messages.telefono">
+          <div *ngFor="let validation of validationMessages.telefono">
             <mat-error
               *ngIf="summited && addressForm.get('celular').hasError(validation.type) && (addressForm.get('celular').dirty || addressForm.get('celular').touched)">
               {{ validation.message }}
@@ -76,9 +76,9 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Teléfono</mat-label>
-            <input matInput placeholder="Teléfono" formControlName="telefono">
+            <input matInput placeholder="Teléfono" name="telefono" formControlName="telefono">
           </mat-form-field>
-          <div *ngFor="let validation of validation_messages.telefono">
+          <div *ngFor="let validation of validationMessages.telefono">
             <mat-error
               *ngIf="summited && addressForm.get('telefono').hasError(validation.type) && (addressForm.get('telefono').dirty || addressForm.get('telefono').touched)">
               {{ validation.message }}
