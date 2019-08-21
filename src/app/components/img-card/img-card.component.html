@@ -3,11 +3,14 @@
     <mat-card-title>{{ cardtitle }} </mat-card-title>
     <mat-card-subtitle>{{ cardsubtitle }}</mat-card-subtitle>
   </mat-card-header>
-  <mat-card-content>
-    <img class="mat-card-image img-fluid" mat-card-image [src]="src" alt="Photo of a Shiba Inu">
+  <mat-card-content  class="single-gallery">
+    <div class="overlay"></div>
+    <img class="img-fluid" mat-card-image [src]="src" alt="Photo of a Shiba Inu">
+    <div class="content">
+      <a href="" mat-button class="btn btn-price btn-outline-secondary">Previa</a> 
+    </div>
   </mat-card-content>
   <mat-card-actions>
     <a mat-button class="btn btn-price btn-outline-primary">Contactanos</a>
-    <a mat-button class="btn btn-price btn-outline-secondary">Previa</a>
   </mat-card-actions>
 </mat-card>

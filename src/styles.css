@@ -531,7 +531,7 @@ html {
 .mat-card-header-text {
   margin: 0 !important;
 }
-.mat-card-image {
+/* .mat-card-image {
   -webkit-transition: .3s ease-in-out;
   -o-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
@@ -543,7 +543,7 @@ html {
 -o-transform: scale(1.1);
 -ms-transform: scale(1.1);
 transform: scale(1.1);;
-}
+} */
 
 agm-map {
   height: 300px;
@@ -685,6 +685,52 @@ a.social-icon.social-icon-sm>i[class^=fa-] {
 .social-youtube:hover { background-color: #fff !important; }
 .social-youtube { background-color: #C4302B; }
 
+.overlay, .single-gallery .content {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px; 
+}
+
+.single-gallery {
+  position: relative;
+  margin-bottom: 30px; 
+}
+.single-gallery:hover {
+  cursor: pointer; 
+}
+
+.single-gallery:hover .overlay {
+  background: rgba(255, 255, 255, 0.7); 
+}
+
+.single-gallery:hover .content a {
+  opacity: 1; 
+}
+
+.single-gallery .overlay, .single-gallery .content {
+  transition: all 300ms linear 0s; 
+  margin-left: -16px;
+}
+  
+.single-gallery .content {
+  max-height: 35px;
+  max-width: 35px;
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
+}
+.single-gallery .content a {
+  font-size: 15px;
+  color: #000000;
+  opacity: 0;
+  transition: all 300ms linear 0s; 
+}
 
 /************************************************************************************
 smaller than 990
