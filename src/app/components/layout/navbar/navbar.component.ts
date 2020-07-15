@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { User } from "firebase";
+import { AuthProcessService } from "ngx-auth-firebaseui";
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styles: []
+  selector: "app-navbar",
+  templateUrl: "./navbar.component.html",
+  styles: [],
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  user: User;
+  constructor(public authProcess: AuthProcessService) {}
 
   ngOnInit() {
+    this.authProcess.afa.authState.subscribe((res) => {
+      this.user = res;
+      if (res && res.uid) {
+        console.log("user is logged in", res);
+      } else {
+        console.log("user not logged in");
+      }
+    });
   }
-
 }

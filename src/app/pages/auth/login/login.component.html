@@ -1,0 +1,53 @@
+<div class="container-fluid" style="margin: 5em 0;">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <ngx-auth-firebaseui
+        [guestEnabled]="false"
+        [resetPasswordEnabled]="false"
+        [tabindex]="0"
+        [providers]="['google', 'facebook', 'twitter']"
+        [appearance]="appearance"
+        [registrationEnabled]="registrationEnabled"
+        goBackURL="/"
+        verifyEmailGoBackText="Ir al Index"
+        [min]="8"
+        [max]="15"
+        [enableLengthRule]="true"
+        [enableLowerCaseLetterRule]="true"
+        [enableUpperCaseLetterRule]="true"
+        [enableDigitRule]="true"
+        [enableSpecialCharRule]="true"
+        (onStrengthChanged)="onStrengthChanged($event)"
+        (onSuccess)="onSuccess($event)"
+        (onError)="onError()"
+        [signInTabText]="'Iniciar Sesión'"
+        [signInCardTitleText]="'Credenciales'"
+        [loginButtonText]="'INICIAR'"
+        [forgotPasswordButtonText]="'Olvidaste la Contraseña?'"
+        [nameText]="'Nombre completo'"
+        [nameErrorRequiredText]="'El Nombre es requerido'"
+        [nameErrorMinLengthText]="''"
+        [nameErrorMaxLengthText]="''"
+        [emailText]="'Correo'"
+        [emailErrorRequiredText]="'El Correo es reuqerido'"
+        [emailErrorPatternText]="''"
+        [passwordText]="'Contraseña'"
+        [passwordErrorRequiredText]="'La Contraseña es reuqerida'"
+        [registerTabText]="'Registrarse'"
+        [registerCardTitleText]="'Crear Cuenta'"
+        [registerButtonText]="'CREAR'"
+        [guestButtonText]="'Invitado'"
+        [resetPasswordTabText]="'Olvidaste la Contraseña?'"
+        [resetPasswordInputText]="''"
+        [resetPasswordErrorRequiredText]="''"
+        [resetPasswordErrorPatternText]="''"
+        [resetPasswordActionButtonText]="''"
+        [resetPasswordInstructionsText]="''"
+        [emailConfirmationTitle]="'Confirmar Correo'"
+        [emailConfirmationText]="'Verificar Correo'"
+        [signOutText]="'Cerrar Sesión'"
+      >
+      </ngx-auth-firebaseui>
+    </div>
+  </div>
+</div>

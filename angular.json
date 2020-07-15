@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "InnovacionesJD"
+  "defaultProject": "InnovacionesJD",
+  "cli": {
+    "analytics": "606fee74-7d09-4425-8ddc-1806a253fa8d"
+  }
 }

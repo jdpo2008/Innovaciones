@@ -1,22 +1,37 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
-import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule, Routes } from "@angular/router";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
-import { LayoutModule } from '../components/layout/layout.module';
-import { ComponentsModule } from '../components/components.module';
+import { ComponentsModule } from "../components/components.module";
 
-import { PagesComponent } from './pages.component';
+import { PagesComponent } from "./pages.component";
 
-import { HomeComponent } from './home/home.component';
-import { NotfoundComponent } from './notfound/notfound.component';
-import { AboutComponent } from './about/about.component';
-import { ServiceWebComponent } from './services/service-web/services-web.component';
-import { ServiceHostingComponent } from './services/service-hosting/service-hosting.component';
-import { ServiceExtraComponent } from './services/service-extra/service-extra.component';
-import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from "./home/home.component";
+import { NotfoundComponent } from "./notfound/notfound.component";
+import { AboutComponent } from "./about/about.component";
+import { ContactComponent } from "./contact/contact.component";
+
+const routes: Routes = [
+  {
+    path: "index",
+    component: HomeComponent,
+  },
+  {
+    path: "about",
+    component: AboutComponent,
+  },
+  {
+    path: "contacto",
+    component: ContactComponent,
+  },
+  {
+    path: "**",
+    component: NotfoundComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -24,30 +39,14 @@ import { ContactComponent } from './contact/contact.component';
     NotfoundComponent,
     PagesComponent,
     AboutComponent,
-    ServiceWebComponent,
-    ServiceHostingComponent,
-    ServiceExtraComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     CommonModule,
-    LayoutModule,
-    RouterModule,
+    RouterModule.forChild(routes),
     ComponentsModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
-  exports: [
-    ComponentsModule,
-    NgbModule,
-    HomeComponent,
-    NotfoundComponent,
-    PagesComponent,
-    AboutComponent,
-    ServiceWebComponent,
-    ServiceHostingComponent,
-    ServiceExtraComponent,
-    ContactComponent
-  ]
 })
-export class PagesModule { }
+export class PagesModule {}
