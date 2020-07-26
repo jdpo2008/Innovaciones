@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import * as Waves from "node-waves";
+import * as $ from "jquery";
 
 @Component({
   selector: "app-root",

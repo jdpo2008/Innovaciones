@@ -1,0 +1,19 @@
+<div class="container-fluid" style="margin: 5em 0;">
+  <div class="row">
+    <div class="col-md-6">
+      <p>lorenp</p>
+      <p>lorenp</p>
+      <p>lorenp</p>
+    </div>
+    <div class="col-md-6">
+      <mat-tab-group
+        [selectedIndex]="tabindex"
+        (selectedIndexChange)="setIndex($event)"
+      >
+        <mat-tab tabindex="0" label="Basic"> Content 1 </mat-tab>
+        <mat-tab tabindex="1" label="Medium"> Content 2 </mat-tab>
+        <mat-tab tabindex="2" label="High"> Content 3 </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

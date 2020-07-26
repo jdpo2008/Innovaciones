@@ -66,6 +66,11 @@
       <!-- <li class="nav-item" [routerLinkActive]="['active']">
         <a [routerLink]="['/pages/blog']" class="nav-link text-left">Blog</a>
       </li> -->
+      <li *ngIf="user" class="nav-item" [routerLinkActive]="['active']">
+        <a [routerLink]="['/pages/consulta']" class="nav-link text-left"
+          >Consultar</a
+        >
+      </li>
       <li class="nav-item" [routerLinkActive]="['active']">
         <a [routerLink]="['/pages/contacto']" class="nav-link text-left"
           >Contacto</a
@@ -73,29 +78,13 @@
       </li>
     </ul>
     <div class="navbar-auth">
-      <ul class="navbar-nav" style="margin-right: 3em;">
+      <ul class="navbar-nav" style="margin-right: 1.2em;">
         <li *ngIf="!user" class="nav-item" [routerLinkActive]="['active']">
           <a class="nav-link text-left" [routerLink]="['/auth/login']">
-            <i class="far fa-sign-in"></i> Iniciar
+            <i class="far fa-sign-in"></i> Iniciar Sesión
           </a>
         </li>
-        <li *ngIf="user" class="nav-item dropdown">
-          <a
-            href="javascript:;"
-            class="dropdown-toggle text-left"
-            id="menuPerfil"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >{{ user.displayName }}</a
-          >
-          <div class="dropdown-menu" aria-labelledby="menuPerfil">
-            <button class="dropdown-item" (click)="authProcess.signOut()">
-              <i class="far fa-sign-out"></i> Salir
-            </button>
-          </div>
-        </li>
+        <app-avatar></app-avatar>
       </ul>
     </div>
   </div>

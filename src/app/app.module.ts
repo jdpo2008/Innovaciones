@@ -19,6 +19,8 @@ import { AlertService } from "./services/alert.service";
 // Main Component
 import { AppComponent } from "./app.component";
 import { environment } from "../environments/environment";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 
 const appRoutes: Routes = [
   {
@@ -52,6 +54,8 @@ const appRoutes: Routes = [
     ComponentsModule,
     SweetAlert2Module.forRoot(),
     RouterModule.forRoot(appRoutes, { useHash: true }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     NgxAuthFirebaseUIModule.forRoot(
       environment.firebaseConfig,
       () => "angular-app",

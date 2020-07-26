@@ -1,0 +1,70 @@
+<button
+  *ngIf="user"
+  [matMenuTriggerFor]="posXMenu"
+  [matTooltip]="user?.displayName"
+  [style.background-image]="'url(' + user?.photoURL + ')'"
+  aria-label="Open x-positioned menu"
+  mat-mini-fab
+  style="background-size: cover;"
+>
+  <span *ngIf="!user?.photoURL">{{ displayNameInitials || "" }}</span>
+</button>
+
+<mat-menu #posXMenu="matMenu" xPosition="before">
+  <div
+    fxLayout="row"
+    fxLayout.xs="column"
+    style="padding: 0 10px;"
+    [ngStyle]="{ 'padding-top.px': layout === 'default' ? 0 : 10 }"
+  >
+    <button
+      [style.background-image]="'url(' + user?.photoURL + ')'"
+      mat-fab
+      style="background-size: cover; margin-top: 10px;"
+      *ngIf="layout === 'default'"
+    >
+      <span *ngIf="!user?.photoURL">{{ displayNameInitials || "" }}</span>
+    </button>
+    <div
+      fxLayout="column"
+      style="padding-left: 10px; padding-right: 10px; margin-top: 8px;"
+    >
+      <strong style="font-size: 1.1em;">{{ user?.displayName }}</strong>
+      <em mat-card-subtitle style="font-style: italic; font-weight: bolder;">{{
+        user?.email
+      }}</em>
+    </div>
+  </div>
+
+  <div
+    fxFlex="100"
+    fxLayout="column"
+    style="padding-left: 10px; padding-right: 10px;"
+    [ngStyle]="{ 'padding-bottom.px': layout === 'default' ? 0 : 10 }"
+  >
+    <div *ngFor="let menuItem of links" class="links-menu">
+      <button (click)="menuItem?.callback()" mat-menu-item>
+        <mat-icon>{{ menuItem?.icon }}</mat-icon>
+        {{ menuItem?.text }}
+      </button>
+    </div>
+    <!-- <button
+      *ngIf="canViewAccount"
+      (click)="openProfile()"
+      color="primary"
+      fxLayoutAlign="center"
+      mat-raised-button
+    >
+      {{ textProfile }}
+    </button> -->
+    <button
+      (click)="signOut()"
+      *ngIf="canLogout"
+      color="warn"
+      fxLayoutAlign="center"
+      mat-raised-button
+    >
+      {{ textSignOut }}
+    </button>
+  </div>
+</mat-menu>

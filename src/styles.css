@@ -405,6 +405,7 @@ nav {
   -webkit-transition: right 0.3s ease-in-out;
   -o-transition: right 0.3s ease-in-out;
   transition: right 0.3s ease-in-out;
+  position: fixed;
 }
 
 .theme-config .theme-config-toggle {
@@ -719,7 +720,9 @@ a.social-icon.social-icon-sm > i[class^="fa-"] {
 .social-youtube {
   background-color: #c4302b;
 }
-
+.error-page {
+  margin: 2em !important;
+}
 .overlay,
 .single-gallery .content {
   position: absolute;

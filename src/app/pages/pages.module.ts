@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 
 import { RouterModule, Routes } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { MatTabsModule } from "@angular/material/tabs";
 
 import { ComponentsModule } from "../components/components.module";
 
@@ -13,6 +14,8 @@ import { HomeComponent } from "./home/home.component";
 import { NotfoundComponent } from "./notfound/notfound.component";
 import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
+import { UserService } from "../services/user.service";
+import { ConsultaComponent } from "./consulta/consulta.component";
 
 const routes: Routes = [
   {
@@ -28,6 +31,10 @@ const routes: Routes = [
     component: ContactComponent,
   },
   {
+    path: "consulta",
+    component: ConsultaComponent,
+  },
+  {
     path: "**",
     component: NotfoundComponent,
   },
@@ -40,6 +47,7 @@ const routes: Routes = [
     PagesComponent,
     AboutComponent,
     ContactComponent,
+    ConsultaComponent,
   ],
   imports: [
     CommonModule,
@@ -47,6 +55,8 @@ const routes: Routes = [
     ComponentsModule,
     NgbModule,
     FormsModule,
+    MatTabsModule,
   ],
+  providers: [UserService],
 })
 export class PagesModule {}
