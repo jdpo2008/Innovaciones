@@ -48,21 +48,33 @@
         {{ menuItem?.text }}
       </button>
     </div>
-    <!-- <button
+    <button
       *ngIf="canViewAccount"
       (click)="openProfile()"
       color="primary"
       fxLayoutAlign="center"
       mat-raised-button
+      style="margin: 5px;"
     >
       {{ textProfile }}
-    </button> -->
+    </button>
+    <button
+      *ngIf="canChangePassword"
+      (click)="changePassword()"
+      color="primary"
+      fxLayoutAlign="center"
+      mat-raised-button
+      style="margin: 5px;"
+    >
+      Cambiar Contraseña
+    </button>
     <button
       (click)="signOut()"
       *ngIf="canLogout"
       color="warn"
       fxLayoutAlign="center"
       mat-raised-button
+      style="margin: 5px;"
     >
       {{ textSignOut }}
     </button>

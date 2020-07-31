@@ -16,6 +16,7 @@ import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
 import { UserService } from "../services/user.service";
 import { ConsultaComponent } from "./consulta/consulta.component";
+import { LoggedInGuard } from "ngx-auth-firebaseui";
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
   {
     path: "consulta",
     component: ConsultaComponent,
+    canActivate: [LoggedInGuard],
   },
   {
     path: "**",

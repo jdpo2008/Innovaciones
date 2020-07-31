@@ -2,7 +2,7 @@
 import { environment } from "./../../environments/environment.prod";
 import { NgModule, ApplicationRef } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { CwdjParallaxModule } from "cwdj-parallax";
 
 //Angular Material
@@ -13,9 +13,13 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatRadioModule } from "@angular/material/radio";
 import { MatCardModule } from "@angular/material/card";
 import { MatTableModule } from "@angular/material/table";
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
 //Maps Module
 import { AgmCoreModule } from "@agm/core";
+
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 // APP Imports
 import { CarouselComponent } from "./carousel/carousel.component";
@@ -25,6 +29,8 @@ import { PagosComponent } from "./pagos/pagos.component";
 import { ImgCardComponent } from "./img-card/img-card.component";
 import { MapsComponent } from "./maps/maps.component";
 import { ParallaxComponent } from "./parallax/parallax.component";
+import { UserProfileComponent } from "./user-profile/user-profile.component";
+import { ResetPasswordComponent } from "./reset-password/reset-password.component";
 
 @NgModule({
   declarations: [
@@ -35,9 +41,12 @@ import { ParallaxComponent } from "./parallax/parallax.component";
     ImgCardComponent,
     MapsComponent,
     ParallaxComponent,
+    UserProfileComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     CommonModule,
+    FlexLayoutModule,
     MatInputModule,
     MatIconModule,
     MatButtonModule,
@@ -45,7 +54,10 @@ import { ParallaxComponent } from "./parallax/parallax.component";
     MatRadioModule,
     MatCardModule,
     MatTableModule,
+    MatTooltipModule,
     ReactiveFormsModule,
+    MatProgressBarModule,
+    FormsModule,
     CwdjParallaxModule,
     AgmCoreModule.forRoot({
       apiKey: environment.maps_key,

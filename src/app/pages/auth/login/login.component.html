@@ -1,6 +1,6 @@
 <div class="container-fluid" style="margin: 5em 0;">
   <div class="row justify-content-center">
-    <div class="col-md-4">
+    <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12">
       <ngx-auth-firebaseui
         [guestEnabled]="false"
         [resetPasswordEnabled]="false"
@@ -19,18 +19,22 @@
         [enableSpecialCharRule]="true"
         (onStrengthChanged)="onStrengthChanged($event)"
         (onSuccess)="onSuccess($event)"
-        (onError)="onError()"
+        (onError)="onError($event)"
         [signInTabText]="'Iniciar Sesión'"
         [signInCardTitleText]="'Credenciales'"
         [loginButtonText]="'INICIAR'"
         [forgotPasswordButtonText]="'Olvidaste la Contraseña?'"
         [nameText]="'Nombre Completo'"
         [nameErrorRequiredText]="'El Nombre es requerido'"
-        [nameErrorMinLengthText]="''"
-        [nameErrorMaxLengthText]="''"
+        [nameErrorMinLengthText]="
+          'El nombre no debe tener menos de 2 caracteres'
+        "
+        [nameErrorMaxLengthText]="
+          'El nombre no debe tener mas de 25 caracteres'
+        "
         [emailText]="'Correo'"
         [emailErrorRequiredText]="'El Correo es requerido'"
-        [emailErrorPatternText]="''"
+        [emailErrorPatternText]="'El Coreo no posee un formato valido'"
         [passwordText]="'Contraseña'"
         [passwordErrorRequiredText]="'La Contraseña es requerida'"
         [registerTabText]="'Registrarse'"

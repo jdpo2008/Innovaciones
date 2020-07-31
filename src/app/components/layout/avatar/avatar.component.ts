@@ -1,6 +1,16 @@
 import { Component, OnInit, EventEmitter, Input, Output } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
 import { AuthProcessService } from "ngx-auth-firebaseui";
 import { User } from "firebase";
+import { Store } from "@ngrx/store";
+import { UserProfileComponent } from "../../user-profile/user-profile.component";
+import { ResetPasswordComponent } from "../../reset-password/reset-password.component";
+import { AlertService } from "../../../services/alert.service";
+import { AppState } from "../../../redux/app.store";
+import {
+  LogOutSuccessAction,
+  LogOutErrorAction,
+} from "../../../pages/auth/auth.actions";
 
 @Component({
   selector: "app-avatar",
@@ -19,6 +29,8 @@ export class AvatarComponent implements OnInit {
   @Input()
   canEditAccount = true;
   @Input()
+  canChangePassword = true;
+  @Input()
   textProfile = "Profile";
   @Input()
   textSignOut = "Sign Out";
@@ -28,7 +40,14 @@ export class AvatarComponent implements OnInit {
 
   user: User;
   displayNameInitials: string | null;
-  constructor(public authProcess: AuthProcessService) {}
+  token: String = null;
+
+  constructor(
+    public authProcess: AuthProcessService,
+    public dialog: MatDialog,
+    private _alertaService: AlertService,
+    private store: Store<AppState>
+  ) {}
 
   ngOnInit(): void {
     this.authProcess.afa.authState.subscribe((res) => {
@@ -37,7 +56,7 @@ export class AvatarComponent implements OnInit {
         ? this.getDisplayNameInitials(this.user.displayName)
         : null;
       if (res && res.uid) {
-        console.log("user is logged in", res);
+        console.log("user logged in", res);
       } else {
         console.log("user not logged in");
       }
@@ -55,20 +74,34 @@ export class AvatarComponent implements OnInit {
   }
 
   openProfile() {
-    // const dialogRef = this.dialog.open(UserComponent);
-    // const instance = dialogRef.componentInstance;
-    // instance.canDeleteAccount = this.canDeleteAccount;
-    // instance.canEditAccount = this.canEditAccount;
+    const dialogRef = this.dialog.open(UserProfileComponent);
+    const instance = dialogRef.componentInstance;
+    instance.canDeleteAccount = this.canDeleteAccount;
+    instance.canEditAccount = this.canEditAccount;
+  }
+
+  changePassword() {
+    const dialogRef = this.dialog.open(ResetPasswordComponent);
+    const instance = dialogRef.componentInstance;
+    //instance.canChangePassword = this.canChangePassword;
   }
 
   async signOut() {
     try {
-      await this.authProcess.afa.signOut();
-      // Sign-out successful.
       this.onSignOut.emit();
+      await this.authProcess.afa.signOut();
+      this.store.dispatch(new LogOutSuccessAction());
+      this._alertaService.setMensaje(
+        "success",
+        "Gracias!",
+        "Esperamos puedas volver pronto",
+        5000
+      );
     } catch (e) {
       // An error happened.
       console.error("An error happened while signing out!", e);
+      this.store.dispatch(new LogOutErrorAction(e));
+      this._alertaService.setMensaje("error", "OPS!", e.message, 5000);
     }
   }
 }

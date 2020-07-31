@@ -93,6 +93,13 @@ nav {
   transition: 0.3s ease-in-out;
 }
 
+.fix-bottom-right {
+  position: fixed;
+  bottom: 60px;
+  right: -10px;
+  z-index: 100;
+}
+
 .top-nav-collapse {
   background-color: rgba(67, 137, 162, 1) !important;
   position: fixed;

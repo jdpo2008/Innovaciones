@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { ConsultaService } from "../../services/consulta.service";
+import { Type } from "../../types/consulta";
 
 @Component({
   selector: "app-consulta",
@@ -8,7 +10,7 @@ import { Component, OnInit } from "@angular/core";
 export class ConsultaComponent implements OnInit {
   tabindex: number;
 
-  constructor() {}
+  constructor(private _service: ConsultaService) {}
 
   ngOnInit(): void {
     this.tabindex = 0;

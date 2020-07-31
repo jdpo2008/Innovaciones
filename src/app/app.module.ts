@@ -5,6 +5,15 @@ import { HttpClientModule } from "@angular/common/http";
 import { SweetAlert2Module } from "@sweetalert2/ngx-sweetalert2";
 import { RouterModule, Routes } from "@angular/router";
 
+//Material
+import { MatFabMenuModule } from "@angular-material-extensions/fab-menu";
+
+//Redux
+import { StoreModule } from "@ngrx/store";
+import { StoreRouterConnectingModule } from "@ngrx/router-store";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { appReducers } from "./redux/app.store";
+
 //Angular Firebase Module
 import { NgxAuthFirebaseUIModule } from "ngx-auth-firebaseui";
 
@@ -52,6 +61,12 @@ const appRoutes: Routes = [
     HttpClientModule,
     LayoutModule,
     ComponentsModule,
+    StoreModule.forRoot(appReducers),
+    StoreRouterConnectingModule.forRoot(),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
     SweetAlert2Module.forRoot(),
     RouterModule.forRoot(appRoutes, { useHash: true }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -63,19 +78,17 @@ const appRoutes: Routes = [
         enableFirestoreSync: true, // enable/disable autosync users with firestore
         toastMessageOnAuthSuccess: false, // whether to open/show a snackbar message on auth success - default : true
         toastMessageOnAuthError: false, // whether to open/show a snackbar message on auth error - default : true
-        authGuardFallbackURL: "/pages/index", // url for unauthenticated users - to use in combination with canActivate feature on a route
-        authGuardLoggedInURL: "/auth/login", // url for authenticated users - to use in combination with canActivate feature on a route
+        authGuardFallbackURL: "/auth/login", // url for unauthenticated users - to use in combination with canActivate feature on a route
+        authGuardLoggedInURL: "/pages/index", // url for authenticated users - to use in combination with canActivate feature on a route
         passwordMaxLength: 12, // `min/max` input parameters in components should be within this range.
         passwordMinLength: 8, // Password length min/max in forms independently of each componenet min/max.
-        // Same as password but for the name
         nameMaxLength: 50,
         nameMinLength: 2,
-        // If set, sign-in/up form is not available until email has been verified.
-        // Plus protected routes are still protected even though user is connected.
         guardProtectedRoutesUntilEmailIsVerified: true,
         enableEmailVerification: true, // default: true
       }
     ),
+    MatFabMenuModule,
   ],
   providers: [DominioService, AlertService],
   bootstrap: [AppComponent],

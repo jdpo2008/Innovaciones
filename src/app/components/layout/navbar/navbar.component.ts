@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
     this.authProcess.afa.authState.subscribe((res) => {
       this.user = res;
       if (res && res.uid) {
-        console.log("user is logged in", res);
+        console.log("user logged in");
       } else {
         console.log("user not logged in");
       }

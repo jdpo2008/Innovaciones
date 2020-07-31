@@ -4,7 +4,7 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from "@angular/fire/firestore";
-import { Consulta } from "../types/consulta";
+import { Consulta, Type } from "../types/consulta";
 import { Observable } from "rxjs";
 
 var collection = {
@@ -28,9 +28,27 @@ export class ConsultaService {
   }
 
   findConsulta(obj: Consulta) {
-    this.consultaRef = this.afs.collection(collection.name, (ref) =>
-      ref.where("psid", "==", obj.psid)
-    );
+    switch (obj.type) {
+      case "Basic":
+        this.consultaRef = this.afs.collection(collection.name, (ref) =>
+          ref.where("psid", "==", obj.psid)
+        );
+        break;
+      case "Medium":
+        this.consultaRef = this.afs.collection(collection.name, (ref) =>
+          ref.where("pid", "==", obj.pid).where("k2", "==", obj.k2)
+        );
+        break;
+      case "High":
+        this.consultaRef = this.afs.collection(collection.name, (ref) =>
+          ref.where("psid", "==", obj.psid).where("pid", "==", obj.pid)
+        );
+        break;
+      default:
+        this.consultaRef = this.afs.collection(collection.name, (ref) =>
+          ref.where("psid", "==", obj.psid)
+        );
+    }
     return this.consultaRef;
   }
 
