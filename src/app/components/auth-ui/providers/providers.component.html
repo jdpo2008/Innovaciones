@@ -1,0 +1,102 @@
+<div [@animateStagger]="{ value: '50' }">
+  <div
+    [fxLayoutAlign]="layout == 'row' ? 'space-around center' : 'stretch'"
+    [fxLayout]="layout"
+    fxLayout.xs="column"
+  >
+    <button
+      (click)="processLegalSignUP(authProvider.Google)"
+      *ngIf="
+        providers === authProvider.ALL ||
+        providers.includes(authProvider.Google)
+      "
+      [@animate]="{ value: '*', params: { duration: '300ms', y: '100px' } }"
+      [ngClass.xs]="{ 'space-full-xs': true }"
+      mat-button
+    >
+      <mat-icon svgIcon="google-colored"></mat-icon>
+      Google
+    </button>
+
+    <button
+      (click)="processLegalSignUP(authProvider.Apple)"
+      *ngIf="
+        providers === authProvider.ALL || providers.includes(authProvider.Apple)
+      "
+      [@animate]="{ value: '*', params: { duration: '300ms', y: '100px' } }"
+      [ngClass.xs]="{ 'space-full-xs': true }"
+      class="apple-filled"
+      mat-button
+    >
+      <mat-icon svgIcon="apple"></mat-icon>
+      Apple
+    </button>
+
+    <button
+      (click)="processLegalSignUP(authProvider.Facebook)"
+      *ngIf="
+        providers === authProvider.ALL ||
+        providers.includes(authProvider.Facebook)
+      "
+      [@animate]="{ value: '*', params: { duration: '300ms', y: '100px' } }"
+      [ngClass.xs]="{ 'space-full-xs': true }"
+      class="facebook-filled"
+      mat-button
+    >
+      <mat-icon svgIcon="facebook"></mat-icon>
+      Facebook
+    </button>
+    <button
+      (click)="processLegalSignUP(authProvider.Twitter)"
+      *ngIf="
+        providers === authProvider.ALL ||
+        providers.includes(authProvider.Twitter)
+      "
+      [@animate]="{ value: '*', params: { duration: '300ms', y: '100px' } }"
+      [ngClass.xs]="{ 'space-full-xs': true }"
+      class="twitter-filled"
+      mat-button
+    >
+      <mat-icon svgIcon="twitter"></mat-icon>
+      Twitter
+    </button>
+    <button
+      (click)="processLegalSignUP(authProvider.Github)"
+      *ngIf="
+        providers === authProvider.ALL ||
+        providers.includes(authProvider.Github)
+      "
+      [@animate]="{ value: '*', params: { duration: '300ms', y: '100px' } }"
+      [ngClass.xs]="{ 'space-full-xs': true }"
+      mat-button
+    >
+      <mat-icon svgIcon="github"></mat-icon>
+      GitHub
+    </button>
+    <button
+      (click)="processLegalSignUP(authProvider.Microsoft)"
+      *ngIf="
+        providers === authProvider.ALL ||
+        providers.includes(authProvider.Microsoft)
+      "
+      [@animate]="{ value: '*', params: { duration: '300ms', y: '100px' } }"
+      [ngClass.xs]="{ 'space-full-xs': true }"
+      mat-button
+    >
+      <mat-icon svgIcon="microsoft"></mat-icon>
+      Microsoft
+    </button>
+    <button
+      (click)="processLegalSignUP(authProvider.Yahoo)"
+      *ngIf="
+        providers === authProvider.ALL || providers.includes(authProvider.Yahoo)
+      "
+      [@animate]="{ value: '*', params: { duration: '300ms', y: '100px' } }"
+      [ngClass.xs]="{ 'space-full-xs': true }"
+      mat-button
+    >
+      <mat-icon svgIcon="yahoo"></mat-icon>
+      Yahoo
+    </button>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+#login-form-wrapper {
+  flex: 1 0 auto;
+  padding: 32px;
+}
+
+#login-form {
+  width: 384px;
+  max-width: 384px;
+  padding: 32px;
+  text-align: center;
+}
+
+#login-form .title {
+  font-size: 20px;
+  margin: 16px 0 32px 0;
+}
+
+#login-form form {
+  width: 100%;
+  text-align: left;
+}
+
+#login-form form mat-form-field {
+  width: 100%;
+}
+
+#login-form form mat-checkbox {
+  margin: 0;
+}
+
+#login-form form .remember-forgot-password {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+#login-form form .remember-forgot-password .remember-me {
+  margin-bottom: 12px;
+  padding-top: 5px;
+}
+
+#login-form form .remember-forgot-password .forgot-password {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding-right: 0px !important;
+}
+
+#login-form form .submit-button {
+  width: 100%;
+  margin: 16px auto;
+  display: block;
+}
+
+#login-form .separator {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 24px auto;
+  position: relative;
+  overflow: hidden;
+  width: 100px;
+}
+
+#login-form .separator .text {
+  display: inline-flex;
+  position: relative;
+  padding: 0 8px;
+  z-index: 9999;
+}
+
+#login-form .separator .text:before,
+#login-form .separator .text:after {
+  content: "";
+  display: block;
+  width: 30px;
+  position: absolute;
+  top: 10px;
+  border-top: 1px solid;
+}
+
+#login-form .separator .text:before {
+  right: 100%;
+}
+
+#login-form .separator .text:after {
+  left: 100%;
+}

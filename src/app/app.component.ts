@@ -1,10 +1,15 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Router } from "@angular/router";
-import { MatFabMenu } from "@angular-material-extensions/fab-menu";
 import * as Waves from "node-waves";
 import * as $ from "jquery";
-import { ResizeService } from "./services/app.service";
-import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
+import { Store } from "@ngrx/store";
+import { NgxSpinnerService } from "ngx-spinner";
+import { AppState } from "./redux/app.store";
+import { Subscription } from "rxjs";
+import {
+  ActivarLoadingAction,
+  DesactivarLoadingAction,
+} from "./redux/app.actions";
 
 @Component({
   selector: "app-root",
@@ -13,46 +18,29 @@ import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = "InnovacionesJD";
-
-  fabButtonsRandom: MatFabMenu[] = [
-    {
-      id: 1,
-      icon: "create",
-    },
-    {
-      id: 2,
-      icon: "mail",
-    },
-    {
-      id: 3,
-      icon: "file_copy",
-    },
-    {
-      id: 4,
-      icon: "phone",
-    },
-  ];
-
-  //isSmallScreen: boolean;
+  cargando: boolean;
+  subscription: Subscription;
 
   constructor(
     private router: Router,
-    private _resizeService: ResizeService,
-    private breakpointObserver: BreakpointObserver
+    private spinner: NgxSpinnerService,
+    private store: Store<AppState>
   ) {
-    // this.breakpointObserver
-    //   .observe([Breakpoints.HandsetLandscape, Breakpoints.HandsetPortrait])
-    //   .subscribe((result) => {
-    //     console.log(result);
-    //     if (result.matches) {
-    //       this.isSmallScreen = true;
-    //       console.log(this.isSmallScreen);
-    //     }
-    //   });
-    // this.isSmallScreen = this.breakpointObserver.isMatched("500");
+    this.store.dispatch(new ActivarLoadingAction());
   }
 
   ngOnInit(): void {
+    this.subscription = this.store.select("ui").subscribe((ui) => {
+      if (ui.isLoading) {
+        this.spinner.show();
+      } else {
+        this.spinner.hide();
+      }
+      this.cargando = ui.isLoading;
+    });
+
+    this.store.dispatch(new DesactivarLoadingAction());
+
     this.router.navigate(["/pages/index"]);
     $(window).scroll(function () {
       if ($(this).scrollTop() > 200) $(".to-top").fadeIn();

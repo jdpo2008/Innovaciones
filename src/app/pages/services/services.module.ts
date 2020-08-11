@@ -7,6 +7,7 @@ import { ServiceWebComponent } from "./service-web/services-web.component";
 import { ServiceExtraComponent } from "./service-extra/service-extra.component";
 import { ServiceHostingComponent } from "./service-hosting/service-hosting.component";
 import { ComponentsModule } from "../../components/components.module";
+import { AngularMaterialModule } from "../../angular-material.module";
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     ComponentsModule,
     RouterModule.forChild(routes),
+    AngularMaterialModule,
   ],
 })
 export class ServicesModule {}

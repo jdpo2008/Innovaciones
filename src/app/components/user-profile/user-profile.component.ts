@@ -2,14 +2,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { User } from "firebase";
 import { Store } from "@ngrx/store";
-import { AuthProcessService, FirestoreSyncService } from "ngx-auth-firebaseui";
 import { MatFormFieldAppearance } from "@angular/material/form-field";
 import { AppState } from "../../redux/app.store";
 import { AlertService } from "../../services/alert.service";
-import {
-  LogOutSuccessAction,
-  LogOutErrorAction,
-} from "../../pages/auth/auth.actions";
+import { LogOutSuccessAction, AuthError } from "../../pages/auth/auth.actions";
+import { AuthProcessService } from "../../services/auth-sync.service";
+import { FirestoreSyncService } from "../../services/firestore-sync.service";
+import { AngularFireAuth } from "@angular/fire/auth";
 
 export const EMAIL_REGEX = new RegExp(
   [
@@ -58,15 +57,14 @@ export class UserProfileComponent implements OnInit {
   updatePasswordFormControl: FormControl;
 
   constructor(
+    public auth: AngularFireAuth,
     public authProcess: AuthProcessService,
     private fireStoreService: FirestoreSyncService,
     private store: Store<AppState>,
     private _alertaService: AlertService
   ) {}
 
-  ngOnInit(): void {
-    console.log(this.authProcess.user);
-  }
+  ngOnInit(): void {}
 
   changeEditMode() {
     this.editMode = !this.editMode;
@@ -148,7 +146,7 @@ export class UserProfileComponent implements OnInit {
         5000
       );
     } catch (e) {
-      this.store.dispatch(new LogOutErrorAction(e));
+      this.store.dispatch(new AuthError(e));
       this._alertaService.setMensaje("error", "OPS!", e.message, 5000);
     }
   }

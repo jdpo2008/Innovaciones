@@ -1,0 +1,112 @@
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  Input,
+  Output,
+  SimpleChanges,
+  EventEmitter,
+} from "@angular/core";
+import { speedDialFabAnimations } from "./mobile-nav.animations";
+import { ThemePalette } from "@angular/material/core";
+import { TooltipPosition } from "@angular/material/tooltip";
+
+export interface MatFabMenu {
+  id: string | number;
+  icon?: string; // please use either icon or imgUrl
+  iconColor?: ThemePalette;
+  imgUrl?: string; // please use either icon or imgUrl
+  tooltip?: string;
+  tooltipPosition?: TooltipPosition;
+  color?: ThemePalette;
+  link?: string;
+}
+
+export type MatFabMenuDirection = "top" | "bottom" | "left" | "right";
+
+@Component({
+  selector: "app-mobile-nav",
+  templateUrl: "./mobile-nav.component.html",
+  styleUrls: ["./mobile-nav.component.css"],
+  animations: speedDialFabAnimations,
+})
+export class MobileNavComponent implements OnInit, OnChanges {
+  @Input()
+  fabButtons: MatFabMenu[];
+  @Input()
+  icon = "menu";
+  @Input()
+  direction: MatFabMenuDirection = "top";
+  @Input()
+  color: ThemePalette = "accent";
+  @Input()
+  isActive: boolean;
+  @Input()
+  disabled: boolean;
+  @Input()
+  closeAfterSelection = true;
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output()
+  onFabMenuItemSelected: EventEmitter<string | number> = new EventEmitter<
+    string | number
+  >();
+
+  layout: any;
+  layout2: any;
+  constructor() {}
+
+  ngOnInit(): void {
+    this.adjustLayout();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.direction && !changes.direction.firstChange) {
+      this.direction = changes.direction.currentValue;
+      this.adjustLayout();
+    }
+
+    if (changes.color && !changes.color.firstChange) {
+      this.color = changes.color.currentValue;
+    }
+
+    if (changes.fabButtons && !changes.fabButtons.firstChange) {
+      this.fabButtons = changes.fabButtons.currentValue;
+    }
+  }
+
+  adjustLayout() {
+    switch (this.direction) {
+      case "top":
+        this.layout = "column-reverse";
+        this.layout2 = "column-reverse";
+        break;
+
+      case "bottom":
+        this.layout = "column";
+        this.layout2 = "column";
+        break;
+
+      case "left":
+        this.layout = "row-reverse";
+        this.layout2 = "row-reverse";
+        break;
+
+      case "right":
+        this.layout = "row";
+        this.layout2 = "row";
+        break;
+    }
+  }
+
+  toggle() {
+    this.isActive = !this.isActive;
+  }
+
+  selectFabMenu(fab: MatFabMenu) {
+    this.onFabMenuItemSelected.emit(fab.id);
+    console.log(fab.id);
+    if (this.closeAfterSelection) {
+      this.isActive = false;
+    }
+  }
+}

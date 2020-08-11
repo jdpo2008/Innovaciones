@@ -1,13 +1,13 @@
 import { UserInfo } from "firebase/app";
 
 export interface AuthState {
-  isAuthenticated: Boolean;
+  isAuthenticated: boolean;
   user: UserInfo;
   error: any;
 }
 
 export const authinitialState: AuthState = {
-  isAuthenticated: true,
+  isAuthenticated: false,
   user: null,
   error: null,
 };

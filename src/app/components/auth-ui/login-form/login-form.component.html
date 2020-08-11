@@ -1,0 +1,154 @@
+<div fxLayout="column" id="login">
+  <div fxLayout="column" fxLayoutAlign="center center" id="login-form-wrapper">
+    <div [@animateStagger]="{ value: '50' }" id="login-form">
+      <mat-card style="width: 380px; padding: 1.5rem !important;">
+        <mat-card-title [@animate]="{ value: '*', params: { x: '-50px' } }"
+          >Iniciar Sesión</mat-card-title
+        >
+        <mat-card-content>
+          <form
+            (ngSubmit)="signIn()"
+            [formGroup]="loginForm"
+            [@animate]="{
+              value: '*',
+              params: { duration: '300ms', y: '100px' }
+            }"
+            name="loginForm"
+            novalidate
+            onsubmit=""
+          >
+            <mat-form-field
+              [@animate]="{ value: '*', params: { x: '50px' } }"
+              appearance="legacy"
+            >
+              <input
+                placeholder="Correo"
+                formControlName="email"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>email</mat-icon>
+              <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+                El Correo es requerido
+              </mat-error>
+              <mat-error
+                *ngIf="
+                  !loginForm.get('email')?.hasError('required') &&
+                  loginForm.get('email')?.hasError('email')
+                "
+              >
+                Ingrese un correo valido
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field
+              [@animate]="{ value: '*', params: { x: '50px' } }"
+              appearance="legacy"
+            >
+              <input
+                placeholder="Contraseña"
+                formControlName="password"
+                matInput
+                type="password"
+                required
+              />
+              <mat-icon color="primary" matSuffix>lock</mat-icon>
+              <mat-error>
+                La Contraseña es requerida
+              </mat-error>
+            </mat-form-field>
+
+            <div
+              [@animate]="{ value: '*', params: { x: '50px' } }"
+              class="remember-forgot-password"
+              fxLayout="row"
+              fxLayout.xs="column"
+              fxLayoutAlign="space-between center"
+            >
+              <mat-checkbox
+                class="remember-me"
+                color="primary"
+                aria-label="Remember Me"
+              >
+                Recordarme
+              </mat-checkbox>
+
+              <button
+                (click)="onResetPasswordRequested.emit()"
+                *ngIf="resetPasswordEnabled"
+                [@animate]="{ value: '*', params: { x: '-50px' } }"
+                color="primary"
+                class="forgot-password"
+                mat-button
+                type="button"
+              >
+                ¿Olvidaste la Contraseña?
+              </button>
+            </div>
+
+            <button
+              type="submit"
+              color="primary"
+              [disabled]="loginForm.invalid"
+              aria-label="LOG IN"
+              class="submit-button"
+              id="loginButton"
+              mat-raised-button
+            >
+              Login
+            </button>
+          </form>
+
+          <div
+            *ngIf="providers.length > 0"
+            [@animate]="{
+              value: '*',
+              params: { z: '50px', delay: '50ms', scale: '0.2' }
+            }"
+            class="separator"
+          >
+            <span class="text"> O </span>
+          </div>
+        </mat-card-content>
+        <app-providers
+          providers="['google', 'facebook', 'twitter']"
+          fxLayoutAlign="center center"
+          layout="row"
+          theme="raised"
+        ></app-providers>
+        <mat-card-footer *ngIf="isLoading">
+          <mat-progress-bar
+            [@animate]="{
+              value: '*',
+              params: { z: '50px', delay: '50ms', scale: '0.2' }
+            }"
+            mode="indeterminate"
+            style="margin: 1rem 0;"
+          ></mat-progress-bar>
+        </mat-card-footer>
+      </mat-card>
+
+      <!-- <div
+        *ngIf="registrationEnabled"
+        [@animateStagger]="{ value: '100' }"
+        class="register"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
+        <span [@animate]="{ value: '*', params: { x: '100px' } }" class="text">
+          {{ dontHaveAnAccountText }}
+        </span>
+        <button
+          (click)="onCreateAccountRequested.emit()"
+          [@animate]="{ value: '*', params: { x: '-100px' } }"
+          [color]="color"
+          id="createAccountButton"
+          mat-button
+          type="button"
+        >
+          {{ createAccountButtonText }}
+        </button>
+      </div> -->
+    </div>
+  </div>
+</div>

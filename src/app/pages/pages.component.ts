@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import * as Waves from "node-waves";
 import * as $ from "jquery";
-import { UserService } from "../services/user.service";
 import { User } from "firebase";
 
 @Component({
@@ -12,7 +11,7 @@ import { User } from "firebase";
 export class PagesComponent implements OnInit {
   users: User[];
 
-  constructor(public _userService: UserService) {}
+  constructor() {}
 
   ngOnInit() {
     // BACK TO TOP

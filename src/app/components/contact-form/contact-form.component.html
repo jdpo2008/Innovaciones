@@ -1,4 +1,10 @@
-<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()" action="enviarCorreo.php" method="POST">
+<form
+  [formGroup]="addressForm"
+  novalidate
+  (ngSubmit)="onSubmit()"
+  action="enviarCorreo.php"
+  method="POST"
+>
   <mat-card class="shipping-card">
     <!-- <mat-card-header>
         <h4 class="highlight" style="color: gray !important">Información para Contactarlo</h4>
@@ -8,8 +14,18 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Nombre</mat-label>
-            <input matInput placeholder="Nombre" name="firstName" formControlName="firstName">
-            <mat-error *ngIf="summited && addressForm.controls['firstName'].hasError('required')">
+            <input
+              matInput
+              placeholder="Nombre"
+              name="firstName"
+              formControlName="firstName"
+            />
+            <mat-error
+              *ngIf="
+                summited &&
+                addressForm.controls['firstName'].hasError('required')
+              "
+            >
               El Nombre es <strong>Requerido</strong>
             </mat-error>
           </mat-form-field>
@@ -17,8 +33,18 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Apellido</mat-label>
-            <input matInput placeholder="Apellido" name="lastName" formControlName="lastName">
-            <mat-error *ngIf="summited && addressForm.controls['lastName'].hasError('required')">
+            <input
+              matInput
+              placeholder="Apellido"
+              name="lastName"
+              formControlName="lastName"
+            />
+            <mat-error
+              *ngIf="
+                summited &&
+                addressForm.controls['lastName'].hasError('required')
+              "
+            >
               El Apellido es <strong>Requerido</strong>
             </mat-error>
           </mat-form-field>
@@ -28,8 +54,18 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Email" name="email" formControlName="email" autocomplete="off">
-            <mat-error *ngIf="summited && addressForm.controls['email'].hasError('required')">
+            <input
+              matInput
+              placeholder="Email"
+              name="email"
+              formControlName="email"
+              autocomplete="off"
+            />
+            <mat-error
+              *ngIf="
+                summited && addressForm.controls['email'].hasError('required')
+              "
+            >
               El Email es <strong>Requerido</strong>
             </mat-error>
             <mat-error *ngIf="addressForm.controls['email'].hasError('email')">
@@ -42,8 +78,18 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Asunto</mat-label>
-            <input matInput placeholder="Asunto" name="asunto" formControlName="asunto" autocomplete="off" />
-            <mat-error *ngIf="summited && addressForm.controls['asunto'].hasError('required')">
+            <input
+              matInput
+              placeholder="Asunto"
+              name="asunto"
+              formControlName="asunto"
+              autocomplete="off"
+            />
+            <mat-error
+              *ngIf="
+                summited && addressForm.controls['asunto'].hasError('required')
+              "
+            >
               El Asunto es <strong>Requerido</strong>
             </mat-error>
           </mat-form-field>
@@ -53,8 +99,19 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Mensaje</mat-label>
-            <textarea rows="3" style="resize: none" name="address" matInput placeholder="Mensaje" formControlName="address"></textarea>
-            <mat-error *ngIf="summited && addressForm.controls['address'].hasError('required')">
+            <textarea
+              rows="3"
+              style="resize: none;"
+              name="address"
+              matInput
+              placeholder="Mensaje"
+              formControlName="address"
+            ></textarea>
+            <mat-error
+              *ngIf="
+                summited && addressForm.controls['address'].hasError('required')
+              "
+            >
               Mensaje es <strong>Requerido</strong>
             </mat-error>
           </mat-form-field>
@@ -64,11 +121,22 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Celular</mat-label>
-            <input matInput placeholder="Celular" name="celular" formControlName="celular">
+            <input
+              matInput
+              placeholder="Celular"
+              name="celular"
+              formControlName="celular"
+            />
           </mat-form-field>
           <div *ngFor="let validation of validationMessages.telefono">
             <mat-error
-              *ngIf="summited && addressForm.get('celular').hasError(validation.type) && (addressForm.get('celular').dirty || addressForm.get('celular').touched)">
+              *ngIf="
+                summited &&
+                addressForm.get('celular').hasError(validation.type) &&
+                (addressForm.get('celular').dirty ||
+                  addressForm.get('celular').touched)
+              "
+            >
               {{ validation.message }}
             </mat-error>
           </div>
@@ -76,11 +144,22 @@
         <div class="col">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Teléfono</mat-label>
-            <input matInput placeholder="Teléfono" name="telefono" formControlName="telefono">
+            <input
+              matInput
+              placeholder="Teléfono"
+              name="telefono"
+              formControlName="telefono"
+            />
           </mat-form-field>
           <div *ngFor="let validation of validationMessages.telefono">
             <mat-error
-              *ngIf="summited && addressForm.get('telefono').hasError(validation.type) && (addressForm.get('telefono').dirty || addressForm.get('telefono').touched)">
+              *ngIf="
+                summited &&
+                addressForm.get('telefono').hasError(validation.type) &&
+                (addressForm.get('telefono').dirty ||
+                  addressForm.get('telefono').touched)
+              "
+            >
               {{ validation.message }}
             </mat-error>
           </div>
@@ -88,7 +167,13 @@
       </div>
     </mat-card-content>
     <mat-card-actions class="text-center">
-      <button mat-flat-button color="primary" style="width: 140px !important" type="submit">
+      <button
+        mat-flat-button
+        color="primary"
+        style="width: 100% !important; padding: 10px 0;"
+        type="submit"
+        [disabled]="addressForm.invalid"
+      >
         <i class="fas fa-check"></i> Enviar
       </button>
     </mat-card-actions>

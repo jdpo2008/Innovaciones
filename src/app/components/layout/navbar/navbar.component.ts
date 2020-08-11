@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { User } from "firebase";
-import { AuthProcessService } from "ngx-auth-firebaseui";
+import { AuthProcessService } from "../../../services/auth-sync.service";
 
 @Component({
   selector: "app-navbar",

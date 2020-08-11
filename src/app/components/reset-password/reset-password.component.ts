@@ -5,9 +5,9 @@ import {
   Validators,
   FormControl,
 } from "@angular/forms";
-import { AuthProcessService } from "ngx-auth-firebaseui";
-import { EMAIL_REGEX } from "../user-profile/user-profile.component";
+
 import { AngularFireAuth } from "@angular/fire/auth";
+import { AuthProcessService } from "../../services/auth-sync.service";
 
 @Component({
   selector: "app-reset-password",
@@ -35,7 +35,9 @@ export class ResetPasswordComponent implements OnInit {
       .updatePassword(this.resetPasswordFormControl.value)
       .then(() => {
         this.isLoading = false;
-        this.authProcess.showToast(
+        this.authProcess.showSweetAlert(
+          "success",
+          "Satisfactorio",
           "La Contraseña fue cambiada de manera exitosa"
         );
       })

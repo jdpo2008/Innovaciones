@@ -584,10 +584,10 @@ agm-map {
 .social {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
-  width: 50%;
-  align-items: center;
-  align-content: center;
+  justify-content: center;
+  width: 65%;
+  align-items: flex-end;
+  align-content: flex-end;
 }
 
 .social-icon {
@@ -779,6 +779,13 @@ a.social-icon.social-icon-sm > i[class^="fa-"] {
   transition: all 300ms linear 0s;
 }
 
+.mat-button,
+.mat-icon-button,
+.mat-stroked-button,
+.mat-flat-button {
+  line-height: 0px !important;
+}
+
 /************************************************************************************
 smaller than 990
 *************************************************************************************/
@@ -793,6 +800,28 @@ smaller than 990
   .img-box .img-service {
     width: 300px;
     height: 300px;
+  }
+  .nav-link {
+    font-size: 1rem !important;
+    line-height: 5px !important;
+  }
+  .dropdown {
+    padding: 0px !important;
+  }
+  .dropdown .dropdown-menu.show {
+    padding: 0px !important;
+    margin: 0 !important;
+  }
+  .dropdown .dropdown-menu .dropdown-item {
+    line-height: 12px !important;
+  }
+  .ftco-footer .ftco-footer-widget {
+    width: 100%;
+    flex: 1;
+  }
+  .social {
+    width: 100%;
+    justify-content: center;
   }
 }
 

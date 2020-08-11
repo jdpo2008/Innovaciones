@@ -1,0 +1,16 @@
+.space-full-xs {
+  width: 100%;
+  margin: 0.4rem;
+}
+
+.apple-filled mat-icon svg path {
+  fill: #000000;
+}
+
+.facebook-filled mat-icon {
+  fill: #385899;
+}
+
+.twitter-filled mat-icon {
+  fill: #1da1f2;
+}

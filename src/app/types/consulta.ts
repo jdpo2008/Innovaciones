@@ -1,4 +1,4 @@
-export const Type: string[] = ["Basic", "Medium", "High"];
+export type ConsultaType = "Basic" | "Medium" | "High";
 
 export interface Consulta {
   uid?: string;
@@ -6,9 +6,12 @@ export interface Consulta {
   basic?: string;
   high?: number;
   medium?: number;
-  pid: number;
+  pid?: number;
   k2?: number;
   full_psid?: string;
-  createdAt?: Date;
-  type?: String;
+  createdAt?: any;
+  updateAt?: any;
+  type?: string;
+  like?: number;
+  unlike?: number;
 }

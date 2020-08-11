@@ -28,11 +28,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" [routerLinkActive]="['active']">
-        <a [routerLink]="['/pages/index']" class="nav-link text-left">Inicio</a>
+        <a [routerLink]="['/pages/index']" class="nav-link text-left">
+          <i class="fad fa-home"></i> Inicio</a
+        >
       </li>
       <li class="nav-item" [routerLinkActive]="['active']">
         <a [routerLink]="['/pages/about']" class="nav-link text-left"
-          >Quienes Somos?</a
+          ><i class="fad fa-poll-people"></i> Quienes Somos?</a
         >
       </li>
       <li class="nav-item dropdown">
@@ -44,23 +46,24 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
-          >Servicios</a
+        >
+          <i class="fad fa-computer-speaker"></i> Servicios</a
         >
         <div class="dropdown-menu" aria-labelledby="menuServices">
-          <a class="dropdown-item" [routerLink]="['/services/web']"
-            >Paginas Web</a
+          <a class="dropdown-item" [routerLink]="['/services/web']">
+            <i class="fad fa-code"></i> Paginas Web</a
           >
-          <a class="dropdown-item" [routerLink]="['/services/hosting']"
-            >Alojamiento Web</a
+          <a class="dropdown-item" [routerLink]="['/services/hosting']">
+            <i class="fad fa-server"></i> Alojamiento Web</a
           >
-          <a class="dropdown-item" [routerLink]="['/services/extras']"
-            >Servicios Adicionales</a
+          <a class="dropdown-item" [routerLink]="['/services/extras']">
+            <i class="fad fa-layer-plus"></i> Servicios Adicionales</a
           >
         </div>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']">
         <a [routerLink]="['/pages/projects']" class="nav-link text-left"
-          >Proyectos</a
+          ><i class="fad fa-construction"></i> Proyectos</a
         >
       </li>
       <!-- <li class="nav-item" [routerLinkActive]="['active']">
@@ -68,12 +71,12 @@
       </li> -->
       <li *ngIf="user" class="nav-item" [routerLinkActive]="['active']">
         <a [routerLink]="['/pages/consulta']" class="nav-link text-left"
-          >Consultar</a
+          ><i class="fad fa-search-plus"></i> Consultar</a
         >
       </li>
       <li class="nav-item" [routerLinkActive]="['active']">
         <a [routerLink]="['/pages/contacto']" class="nav-link text-left"
-          >Contacto</a
+          ><i class="fad fa-map-marker-alt"></i> Contacto</a
         >
       </li>
     </ul>
@@ -81,7 +84,7 @@
       <ul class="navbar-nav" style="margin-right: 1.2em;">
         <li *ngIf="!user" class="nav-item" [routerLinkActive]="['active']">
           <a class="nav-link text-left" [routerLink]="['/auth/login']">
-            <i class="far fa-sign-in"></i> Iniciar Sesión
+            <i class="fad fa-sign-in-alt"></i> Login
           </a>
         </li>
         <app-avatar></app-avatar>

@@ -45,19 +45,28 @@ export class ServiceExtraComponent implements OnInit {
     this.dominios = ELEMENT_DATA;
     this.src = [
       {
-        path: "../../../../assets/images/landing-page.png",
-        cardtitle: "Landing Page",
-        cardsubtitle: "HTML5-BS4",
+        path: "../../../../assets/images/templates/fuse_template.jpg",
+        cardtitle: "Fuse React",
+        cardsubtitle:
+          "React Admin Template Redux Toolkit Material Design React Hooks",
+        cost: "25$",
+        link: "http://react-material.fusetheme.com/apps/dashboards/analytics",
       },
       {
-        path: "../../../../assets/images/landing-page.png",
-        cardtitle: "Smarty Template",
-        cardsubtitle: "HTML5-BS4",
+        path: "../../../../assets/images/templates/fuse_template_angular.jpg",
+        cardtitle: "Fuse Angular",
+        cardsubtitle:
+          "Angular 10+ Material Design, NGRX Store, FlexLayout Admin Template",
+        cost: "25$",
+        link: "http://angular-material.fusetheme.com/apps/dashboards/analytics",
       },
       {
-        path: "../../../../assets/images/chamelong-template.jpg",
-        cardtitle: "Chamelon",
-        cardsubtitle: "HTML5-BS4",
+        path: "../../../../assets/images/templates/metronic_template.jpg",
+        cardtitle: "Metronic",
+        cardsubtitle:
+          "Bootstrap 4 HTML, React, Angular 9, VueJS & Laravel Admin Dashboard Theme",
+        cost: "55$",
+        link: "https://keenthemes.com/metronic/",
       },
     ];
   }

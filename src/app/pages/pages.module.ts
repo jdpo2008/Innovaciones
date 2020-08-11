@@ -1,12 +1,10 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
-
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { MatTabsModule } from "@angular/material/tabs";
 
 import { ComponentsModule } from "../components/components.module";
+import { AngularMaterialModule } from "../angular-material.module";
 
 import { PagesComponent } from "./pages.component";
 
@@ -14,9 +12,9 @@ import { HomeComponent } from "./home/home.component";
 import { NotfoundComponent } from "./notfound/notfound.component";
 import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
-import { UserService } from "../services/user.service";
 import { ConsultaComponent } from "./consulta/consulta.component";
-import { LoggedInGuard } from "ngx-auth-firebaseui";
+import { LoggedInGuard } from "../guards/logged-in.guard";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 const routes: Routes = [
   {
@@ -55,10 +53,11 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     ComponentsModule,
-    NgbModule,
     FormsModule,
-    MatTabsModule,
+    ReactiveFormsModule,
+    AngularMaterialModule,
+    FlexLayoutModule,
   ],
-  providers: [UserService],
+  providers: [LoggedInGuard],
 })
 export class PagesModule {}

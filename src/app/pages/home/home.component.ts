@@ -1,8 +1,6 @@
 import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { map } from "rxjs/operators";
 import * as AOS from "aos";
-import { UserService } from "../../services/user.service";
 
 @Component({
   selector: "app-home",
@@ -10,12 +8,10 @@ import { UserService } from "../../services/user.service";
   styles: [],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  user: any;
-  constructor(private router: Router, public _userService: UserService) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     AOS.init();
-    this.getCustomersList();
   }
 
   ngAfterViewInit(): void {}
@@ -26,22 +22,5 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   onProjects() {
     this.router.navigate(["/pages/projects"]);
-  }
-
-  getCustomersList() {
-    this._userService
-      .getAllUSers()
-      .snapshotChanges()
-      .pipe(
-        map((changes) =>
-          changes.map((c) => ({
-            key: c.payload.doc.id,
-            ...c.payload.doc.data(),
-          }))
-        )
-      )
-      .subscribe((user) => {
-        this.user = user;
-      });
   }
 }

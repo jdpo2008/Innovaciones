@@ -1,19 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-img-card',
-  templateUrl: './img-card.component.html',
-  styles: []
+  selector: "app-img-card",
+  templateUrl: "./img-card.component.html",
+  styles: [],
 })
 export class ImgCardComponent implements OnInit {
-  @Input() src = '';
-  @Input() cardtitle = '';
-  @Input() cardsubtitle = '';
+  @Input() src = "";
+  @Input() cardtitle = "";
+  @Input() cardsubtitle = "";
+  @Input() cost = "";
+  @Input() link = "";
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-
-  }
-
+  ngOnInit() {}
 }

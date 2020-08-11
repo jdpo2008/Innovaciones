@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
-import { AuthProcessService } from "ngx-auth-firebaseui";
 import { User } from "firebase";
 import { Store } from "@ngrx/store";
 import { UserProfileComponent } from "../../user-profile/user-profile.component";
@@ -9,8 +8,9 @@ import { AlertService } from "../../../services/alert.service";
 import { AppState } from "../../../redux/app.store";
 import {
   LogOutSuccessAction,
-  LogOutErrorAction,
+  AuthError,
 } from "../../../pages/auth/auth.actions";
+import { AuthProcessService } from "../../../services/auth-sync.service";
 
 @Component({
   selector: "app-avatar",
@@ -41,7 +41,7 @@ export class AvatarComponent implements OnInit {
   user: User;
   displayNameInitials: string | null;
   token: String = null;
-
+  links: [];
   constructor(
     public authProcess: AuthProcessService,
     public dialog: MatDialog,
@@ -100,7 +100,7 @@ export class AvatarComponent implements OnInit {
     } catch (e) {
       // An error happened.
       console.error("An error happened while signing out!", e);
-      this.store.dispatch(new LogOutErrorAction(e));
+      this.store.dispatch(new AuthError(e));
       this._alertaService.setMensaje("error", "OPS!", e.message, 5000);
     }
   }

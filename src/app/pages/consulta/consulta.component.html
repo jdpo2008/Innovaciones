@@ -1,19 +1,413 @@
-<div class="container-fluid" style="margin: 5em 0;">
-  <div class="row">
-    <div class="col-md-6">
-      <p>lorenp</p>
-      <p>lorenp</p>
-      <p>lorenp</p>
-    </div>
-    <div class="col-md-6">
+<div class="container-fluid">
+  <div class="row" style="margin: 5.5rem 2rem 2rem 0;">
+    <div class="col-lg-5 col-md-5">
+      <h3 class="service-heading">
+        Consultar en BD <i class="fad fa-database"></i>
+      </h3>
+      <br />
+      <p>Verifica si existe el codigo en nuestra base de datos</p>
       <mat-tab-group
-        [selectedIndex]="tabindex"
-        (selectedIndexChange)="setIndex($event)"
+        [selectedIndex]="tabindex1"
+        (selectedIndexChange)="setIndex1($event)"
+        style="width: fit-content;"
       >
-        <mat-tab tabindex="0" label="Basic"> Content 1 </mat-tab>
-        <mat-tab tabindex="1" label="Medium"> Content 2 </mat-tab>
-        <mat-tab tabindex="2" label="High"> Content 3 </mat-tab>
+        <mat-tab tabindex="0" label="Basic">
+          <form
+            [formGroup]="formBasic"
+            fxLayout="column"
+            fxLayoutAlign="center flex-start"
+            style="margin-top: 1rem;"
+            (ngSubmit)="onFind('Basic')"
+          >
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="psid"
+                formControlName="psid"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>filter_5</mat-icon>
+              <mat-error *ngIf="formBasic.get('psid')?.hasError('required')">
+                El psid es requerido para realizar la busquedad
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="Resultado"
+                type="text"
+                [value]="resultado"
+                [style.color]="!findExist ? '#c4302b' : '#28a745'"
+                matInput
+                disabled
+              />
+              <mat-icon color="primary" matSuffix>image_search</mat-icon>
+            </mat-form-field>
+            <br />
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              style="width: 95%;"
+              [disabled]="formBasic.invalid"
+            >
+              Consultar
+            </button>
+          </form>
+        </mat-tab>
+        <mat-tab tabindex="1" label="Medium">
+          <form
+            [formGroup]="formMedium"
+            fxLayout="column"
+            fxLayoutAlign="center flex-start"
+            style="margin-top: 1rem;"
+            (ngSubmit)="onFind('Medium')"
+          >
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input placeholder="K2" formControlName="k2" matInput required />
+              <mat-icon color="primary" matSuffix>filter_5</mat-icon>
+              <mat-error *ngIf="formMedium.get('k2')?.hasError('required')">
+                El Correo es requerido
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="Pid"
+                formControlName="pid"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>filter_9_plus</mat-icon>
+              <mat-error *ngIf="formMedium.get('pid')?.hasError('required')">
+                El Correo es requerido
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="resultado"
+                [value]="resultado"
+                type="text"
+                matInput
+                disabled
+              />
+              <mat-icon color="primary" matSuffix>image_search</mat-icon>
+            </mat-form-field>
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              style="width: 95%;"
+              [disabled]="formMedium.invalid"
+            >
+              Consultar
+            </button>
+          </form>
+        </mat-tab>
+        <mat-tab tabindex="2" label="High">
+          <form
+            [formGroup]="formHigh"
+            fxLayout="column"
+            fxLayoutAlign="center flex-start"
+            style="margin-top: 1rem;"
+            (ngSubmit)="onFind('High')"
+          >
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="psid"
+                formControlName="psid"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>filter_5</mat-icon>
+              <mat-error *ngIf="formHigh.get('psid')?.hasError('required')">
+                El codigo del psid es requerido
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="pid"
+                formControlName="pid"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>filter_9_plus</mat-icon>
+              <mat-error *ngIf="formHigh.get('pid')?.hasError('required')">
+                El numero PID es requerido
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="resultado"
+                [value]="resultado"
+                type="text"
+                matInput
+                disabled
+              />
+              <mat-icon color="primary" matSuffix>image_search</mat-icon>
+            </mat-form-field>
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              style="width: 95%;"
+              [disabled]="formHigh.invalid"
+            >
+              Consultar
+            </button>
+          </form>
+        </mat-tab>
       </mat-tab-group>
+      <div
+        *ngIf="findExist"
+        class="text-center"
+        style="width: 70%; margin: 2rem 0 0 0;"
+      >
+        <button
+          mat-icon-button
+          [matBadge]="like"
+          matBadgeColor="accent"
+          matTooltip="Funciona"
+          matTooltipPosition="before"
+          style="margin: 0 1rem;"
+          (click)="onLike()"
+        >
+          <mat-icon>thumb_up_alt</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          [matBadge]="unLike"
+          style="margin: 0 1rem;"
+          matBadgeColor="warn"
+          matTooltip="No funciona"
+          matTooltipPosition="after"
+          (click)="onUnLike()"
+        >
+          <mat-icon>thumb_down_alt</mat-icon>
+        </button>
+      </div>
+      <br />
+      <p style="font-size: 14px; line-height: 4px;">
+        <strong class="text-danger">*</strong> El psid debe tener 5 caracteres
+      </p>
+      <p style="font-size: 14px; line-height: 4px;">
+        <strong class="text-danger">*</strong> El k2 debe tener 5 caracteres
+      </p>
+      <p style="font-size: 14px; line-height: 4px;">
+        <strong class="text-danger">*</strong> El pid debe tener 10 caracteres
+      </p>
+    </div>
+    <div class="col-lg-2 col-md-2"></div>
+    <div class="col-lg-5 col-md-5">
+      <h3 class="service-heading">
+        Registrar en BD <i class="fad fa-database"></i>
+      </h3>
+      <br />
+      <p>Registra el codigo en nuestra BD si no existe</p>
+      <mat-tab-group
+        [selectedIndex]="tabindex2"
+        (selectedIndexChange)="setIndex2($event)"
+        style="width: fit-content;"
+      >
+        <mat-tab tabindex="0" label="Basic">
+          <form
+            [formGroup]="formBasicCreate"
+            fxLayout="column"
+            fxLayoutAlign="center flex-start"
+            style="margin-top: 1rem;"
+            (ngSubmit)="onRegister('Basic')"
+          >
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="psid"
+                formControlName="psid"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>loupe</mat-icon>
+              <mat-error
+                *ngIf="formBasicCreate.get('psid')?.hasError('required')"
+              >
+                El psid es requerido para el registro
+              </mat-error>
+              <mat-error
+                *ngIf="formBasicCreate.get('psid')?.hasError('minlength')"
+              >
+                El psid debe contener 5 caracteres
+              </mat-error>
+              <mat-error
+                *ngIf="formBasicCreate.get('psid')?.hasError('maxlength')"
+              >
+                El psid debe contener 5 caracteres
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="basic"
+                formControlName="basic"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>create</mat-icon>
+              <mat-error
+                *ngIf="formBasicCreate.get('basic')?.hasError('required')"
+              >
+                El basic es requerido para el registro
+              </mat-error>
+              <mat-error
+                *ngIf="formBasicCreate.get('basic')?.hasError('pattern')"
+              >
+                El basic solo debe contener numeros
+              </mat-error>
+            </mat-form-field>
+            <br />
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              style="width: 95%;"
+              [disabled]="this.formBasicCreate.invalid"
+            >
+              Registrar
+            </button>
+          </form>
+        </mat-tab>
+        <mat-tab tabindex="1" label="Medium">
+          <form
+            [formGroup]="formMediumCreate"
+            fxLayout="column"
+            fxLayoutAlign="center flex-start"
+            style="margin-top: 1rem;"
+            (ngSubmit)="onRegisterMedium('Medium')"
+          >
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input placeholder="K2" formControlName="k2" matInput required />
+              <mat-icon color="primary" matSuffix>filter_5</mat-icon>
+              <mat-error
+                *ngIf="formMediumCreate.get('k2')?.hasError('required')"
+              >
+                El numero k2 es requerido
+              </mat-error>
+              <mat-error
+                *ngIf="formMediumCreate.get('k2')?.hasError('minlength')"
+              >
+                El psid debe contener 5 caracteres
+              </mat-error>
+              <mat-error
+                *ngIf="formMediumCreate.get('k2')?.hasError('maxlength')"
+              >
+                El psid debe contener 5 caracteres
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="Pid"
+                formControlName="pid"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>filter_9_plus</mat-icon>
+              <mat-error
+                *ngIf="formMediumCreate.get('pid')?.hasError('required')"
+              >
+                El codigo pid es requerido es requerido
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="Medium"
+                formControlName="medium"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>create</mat-icon>
+              <mat-error
+                *ngIf="formMediumCreate.get('medium')?.hasError('required')"
+              >
+                El codigo Medium es requerido
+              </mat-error>
+            </mat-form-field>
+            <br />
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              style="width: 95%;"
+              [disabled]="formMediumCreate.invalid"
+            >
+              Registrar
+            </button>
+          </form>
+        </mat-tab>
+        <mat-tab tabindex="2" label="High">
+          <form
+            [formGroup]="formHighCreate"
+            fxLayout="column"
+            fxLayoutAlign="center flex-start"
+            style="margin-top: 1rem;"
+            (ngSubmit)="onRegisterHigh('High')"
+          >
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="psid"
+                formControlName="psid"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>filter_5</mat-icon>
+              <mat-error
+                *ngIf="formHighCreate.get('psid')?.hasError('required')"
+              >
+                El codigo del psid es requerido
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="pid"
+                formControlName="pid"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>filter_9_plus</mat-icon>
+              <mat-error
+                *ngIf="formHighCreate.get('pid')?.hasError('required')"
+              >
+                El numero PID es requerido
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="legacy" style="width: 460px;">
+              <input
+                placeholder="High"
+                formControlName="high"
+                matInput
+                required
+              />
+              <mat-icon color="primary" matSuffix>create</mat-icon>
+              <mat-error
+                *ngIf="formHighCreate.get('high')?.hasError('required')"
+              >
+                El codigo High es requerido
+              </mat-error>
+            </mat-form-field>
+            <br />
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              style="width: 95%;"
+              [disabled]="formHighCreate.invalid"
+            >
+              Registrar
+            </button>
+          </form>
+        </mat-tab>
+      </mat-tab-group>
+      <br />
+      <p style="font-size: 14px; line-height: 4px;">
+        <strong class="text-danger">*</strong> Si no encuentras el que andas
+        buscando y realizas la encuesta recuerda
+      </p>
+      <p style="font-size: 14px; line-height: 4px;">
+        guardar la informacion para que otro usuario lo pueda usar
+      </p>
     </div>
   </div>
 </div>

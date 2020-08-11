@@ -2,13 +2,10 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 
-import { NgxAuthFirebaseUIModule } from "ngx-auth-firebaseui";
-
-import { MatCardModule } from "@angular/material/card";
+import { AuthUiModule } from "../../components/auth-ui/auth-ui.module";
 
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
-import { environment } from "../../../environments/environment";
 
 const routes: Routes = [
   {
@@ -23,11 +20,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    RouterModule.forChild(routes),
-    NgxAuthFirebaseUIModule,
-  ],
+  imports: [CommonModule, AuthUiModule, RouterModule.forChild(routes)],
 })
 export class AuthModule {}
